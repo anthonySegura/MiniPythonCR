@@ -292,7 +292,6 @@ public class JCEditor extends JFrame {
 		panel.setLayout(new BoxLayout(panel, BoxLayout.LINE_AXIS));
 
 
-
 		fonteAtual = new JLabel("Monospaced / Font.PLAIN / " + tamanhoFonte + "  |   ");
 		fonteAtual.setFont(new Font("Roboto Light", Font.BOLD, 12));
 		fonteAtual.setForeground(new Color(234, 234, 235));
@@ -367,7 +366,7 @@ public class JCEditor extends JFrame {
 		barraDeMenu.add(editar);
 		barraDeMenu.add(projeto);
 		barraDeMenu.add(formatar);
-		barraDeMenu.add(linguagemMenu);
+		//barraDeMenu.add(linguagemMenu); Menu de lenguajes
 		barraDeMenu.add(preferencias);
 		barraDeMenu.add(sobre);
 
@@ -1247,7 +1246,6 @@ public class JCEditor extends JFrame {
 		public void actionPerformed(ActionEvent ev) {
 
 		    consoleTextArea.setText("");
-
             if (lista.get(arquivos.getSelectedIndex()).getArquivo() != null) {
 
                 if (lista.get(arquivos.getSelectedIndex()).arquivoModificado()) {

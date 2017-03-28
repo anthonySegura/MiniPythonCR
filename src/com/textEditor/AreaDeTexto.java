@@ -4,9 +4,9 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Cursor;
-import javax.swing.JOptionPane;
-import javax.swing.JFileChooser;
-import javax.swing.JPanel;
+import javax.swing.*;
+import javax.swing.event.CaretEvent;
+import javax.swing.event.CaretListener;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.OutputStreamWriter;
@@ -40,6 +40,7 @@ import org.fife.rsta.ac.java.JavaLanguageSupport;
 
 public class AreaDeTexto extends JPanel {
 	private RSyntaxTextArea display = null;
+	public static int fila, columna;
 	private InputStream in;
 	private Map<String, String> extensao = new HashMap<>();
 	private JFileChooser jfc;
@@ -50,6 +51,7 @@ public class AreaDeTexto extends JPanel {
 	private String texto;
 	private boolean potigol;
 	private Pesquisar bPesquisa;
+    JLabel linAndCol;
 
 	/**
 	* O construtor da classe define uma lista do tipo HashMap, esta lista
@@ -58,6 +60,12 @@ public class AreaDeTexto extends JPanel {
 	*/
 	public AreaDeTexto() {
 
+	    linAndCol = new JLabel();
+        linAndCol.setBackground(new Color(39, 40, 34));
+        linAndCol.setOpaque(true);
+        linAndCol.setBorder(null);
+        //linAndCol.setEditable(false);
+        linAndCol.setHorizontalAlignment(SwingConstants.RIGHT);
 		extensao.put("java", SyntaxConstants.SYNTAX_STYLE_JAVA);
 		extensao.put("cpp", SyntaxConstants.SYNTAX_STYLE_CPLUSPLUS);
 		extensao.put("py", SyntaxConstants.SYNTAX_STYLE_PYTHON);
@@ -108,6 +116,26 @@ public class AreaDeTexto extends JPanel {
 		bPesquisa = new Pesquisar(getRSyntax());
 		bPesquisa.setVisible(false);
 		this.add(BorderLayout.SOUTH, bPesquisa);
+		this.add(BorderLayout.SOUTH, linAndCol);
+		this.setBorder(null);
+
+		//Evento para obtener la fila y columna del cursor
+        display.addCaretListener(new CaretListener() {
+            @Override
+            public void caretUpdate(CaretEvent e) {
+                try {
+                    int caretPos = display.getCaretPosition();
+                    fila = display.getLineOfOffset(caretPos);
+                    columna = caretPos - display.getLineStartOffset(fila);
+
+                    fila += 1;
+                    columna += 1;
+
+                    linAndCol.setText("<html><div style = 'text-align: right;'><font color = white>" + fila + ":" + columna  + "</font></div></html>");
+                }
+                catch (Exception ex){}
+            }
+        });
 	}
 
 	/**
@@ -325,6 +353,7 @@ public class AreaDeTexto extends JPanel {
 		return display;
 	}
 
+
 	/**
 	* Método que configura a barra de rolagem do JTextArea.
 	*/
@@ -340,6 +369,8 @@ public class AreaDeTexto extends JPanel {
 		}
 		return barra;
 	}
+
+
 
 	/**
 	* Configura o diálogo para abrir ou salvar o arquivo.
