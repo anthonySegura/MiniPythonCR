@@ -1248,34 +1248,53 @@ public class JCEditor extends JFrame {
 
 		    consoleTextArea.setText("");
 
-            if (lista.get(arquivos.getSelectedIndex()).arquivoModificado()) {
-                lista.get(arquivos.getSelectedIndex()).salvar(lista.get(arquivos.getSelectedIndex()).getRSyntax().getText());
-                definirTitulo();
-            }
-
             if (lista.get(arquivos.getSelectedIndex()).getArquivo() != null) {
-                
-                try{
 
-                    ANTLRInputStream input = new ANTLRInputStream(new FileReader(lista.get(arquivos.getSelectedIndex()).getArquivo().toString()));
-                    scanner = new MPGrammarLexer(input);
-                    CommonTokenStream tokens = new CommonTokenStream(scanner);
-                    parser = new MPGrammarParser(tokens);
-
-                    //Sobrescritura de las excepciones
-                    parser.removeErrorListeners();
-                    parser.addErrorListener(new CustomException());
-
-                    ParseTree tree = parser.program();
-
-
+                if (lista.get(arquivos.getSelectedIndex()).arquivoModificado()) {
+                    lista.get(arquivos.getSelectedIndex()).salvar(lista.get(arquivos.getSelectedIndex()).getRSyntax().getText());
+                    definirTitulo();
                 }
-                catch (Exception e){
-                    showMessage("Error ");
-                }
+                compilar();
+            }
+            //Crear el archivo
+            else {
+                guardarNuevo();
+                compilar();
             }
 		}
 	}
+
+	private void guardarNuevo(){
+        lista.get(arquivos.getSelectedIndex()).setTexto(lista.get(arquivos.getSelectedIndex()).getRSyntax().getText());
+        if (lista.get(arquivos.getSelectedIndex()).getArquivo() == null) {
+            lista.get(arquivos.getSelectedIndex()).salvarComo();
+            arquivosAbertos.add(lista.get(arquivos.getSelectedIndex()).getArquivo().toString());
+        }
+
+        arquivos.setTitleAt(arquivos.getSelectedIndex(), lista.get(arquivos.getSelectedIndex()).getArquivo().getName());
+        arquivos.setToolTipTextAt(arquivos.getSelectedIndex(), lista.get(arquivos.getSelectedIndex()).getArquivo().toString());
+        definirTitulo();
+    }
+
+	private void compilar(){
+        try{
+
+            ANTLRInputStream input = new ANTLRInputStream(new FileReader(lista.get(arquivos.getSelectedIndex()).getArquivo().toString()));
+            scanner = new MPGrammarLexer(input);
+            CommonTokenStream tokens = new CommonTokenStream(scanner);
+            parser = new MPGrammarParser(tokens);
+
+            //Sobrescritura de las excepciones
+            parser.removeErrorListeners();
+            parser.addErrorListener(new CustomException());
+
+            ParseTree tree = parser.program();
+
+        }
+        catch (Exception e){
+            showMessage("Error ");
+        }
+    }
 	
 	/**
 	* Classe responsável por abrir o dialógo de impressão e realizá-la.
