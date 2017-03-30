@@ -51,7 +51,7 @@ public class AreaDeTexto extends JPanel {
 	private String texto;
 	private boolean potigol;
 	private Pesquisar bPesquisa;
-    JLabel linAndCol;
+    JLabel linAndCol;   //Indicador de fila y columna
 
 	/**
 	* O construtor da classe define uma lista do tipo HashMap, esta lista
@@ -64,7 +64,7 @@ public class AreaDeTexto extends JPanel {
         linAndCol.setBackground(new Color(39, 40, 34));
         linAndCol.setOpaque(true);
         linAndCol.setBorder(null);
-        //linAndCol.setEditable(false);
+
         linAndCol.setHorizontalAlignment(SwingConstants.RIGHT);
 		extensao.put("java", SyntaxConstants.SYNTAX_STYLE_JAVA);
 		extensao.put("cpp", SyntaxConstants.SYNTAX_STYLE_CPLUSPLUS);

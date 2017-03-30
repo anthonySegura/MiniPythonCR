@@ -30,12 +30,10 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.tree.TreePath;
 
-import Exceptions.CustomException;
+import exceptions.DefaultError;
+import exceptions.SyntaxException;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
-import org.antlr.v4.runtime.RuleContext;
-import org.antlr.v4.runtime.Token;
-import org.antlr.v4.runtime.misc.TestRig;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.fife.ui.autocomplete.AutoCompletion;
 import org.fife.ui.autocomplete.CompletionProvider;
@@ -45,6 +43,7 @@ import org.fife.ui.rsyntaxtextarea.Theme;
 import org.fife.ui.rsyntaxtextarea.TokenMakerFactory;
 import grammar.MPGrammarLexer;
 import grammar.MPGrammarParser;
+import visitors.ASTVisitor;
 
 /**
 * Classe que cria a interface principal e manipula parte dos eventos
@@ -86,6 +85,8 @@ public class JCEditor extends JFrame {
 	private JSplitPane painelSeparador, panelPrincipal;
 	private ArvoreDeProjetos adp;
 	private String sistemaOperacional = System.getProperty("os.name");
+	private  AstGUI ast;
+    private JPanel astPanel;
 
 	//Area de texto de la consola de errores
 	public static JTextArea consoleTextArea;
@@ -403,12 +404,8 @@ public class JCEditor extends JFrame {
 
 		//Estructura del panel para el Arbol Abstracto de Sintaxis
 
-        JPanel astPanel = new JPanel();
+        astPanel = new JPanel();
         astPanel.setLayout(new BorderLayout());
-        AstGUI ast = new AstGUI();
-        JScrollPane scrollP = new JScrollPane(ast);
-        scrollP.setBorder(null);
-        astPanel.add(scrollP, "Center");
 
         panelPrincipal = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, true, painelSeparador, astPanel);
         panelPrincipal.setDividerLocation(740);
@@ -1284,7 +1281,25 @@ public class JCEditor extends JFrame {
 
             //Sobrescritura de las excepciones
             parser.removeErrorListeners();
-            parser.addErrorListener(new CustomException());
+            parser.addErrorListener(new SyntaxException());
+            parser.setErrorHandler(new DefaultError());
+
+            ParseTree tree = parser.program();
+
+        }
+        catch (Exception e){
+            showMessage("Error ");
+        }try{
+
+            ANTLRInputStream input = new ANTLRInputStream(new FileReader(lista.get(arquivos.getSelectedIndex()).getArquivo().toString()));
+            scanner = new MPGrammarLexer(input);
+            CommonTokenStream tokens = new CommonTokenStream(scanner);
+            parser = new MPGrammarParser(tokens);
+
+            //Sobrescritura de las excepciones
+            parser.removeErrorListeners();
+            parser.addErrorListener(new SyntaxException());
+            parser.setErrorHandler(new DefaultError());
 
             ParseTree tree = parser.program();
 
@@ -1395,8 +1410,38 @@ public class JCEditor extends JFrame {
 
     private class showASTListener implements ActionListener {
 	    public void actionPerformed(ActionEvent ev) {
-            panelPrincipal.setDividerLocation(650);
-			panelPrincipal.getRightComponent().setVisible(true);
+
+
+            try{
+
+                ANTLRInputStream input = new ANTLRInputStream(new FileReader(lista.get(arquivos.getSelectedIndex()).getArquivo().toString()));
+                scanner = new MPGrammarLexer(input);
+                CommonTokenStream tokens = new CommonTokenStream(scanner);
+                parser = new MPGrammarParser(tokens);
+
+                //Sobrescritura de las excepciones
+                parser.removeErrorListeners();
+                parser.addErrorListener(new SyntaxException());
+                parser.setErrorHandler(new DefaultError());
+
+                ParseTree tree = parser.program();
+                ASTVisitor visitor = new ASTVisitor();
+                visitor.visit(tree);
+
+                ast = new AstGUI(visitor.getAstGUI());
+
+                JScrollPane scrollP = new JScrollPane(ast);
+                scrollP.setBorder(null);
+                astPanel.add(scrollP, "Center");
+
+                panelPrincipal.setDividerLocation(650);
+			    panelPrincipal.getRightComponent().setVisible(true);
+
+            }
+            catch (Exception e){
+                showMessage("Error ");
+                e.printStackTrace();
+            }
 
 		}
     }

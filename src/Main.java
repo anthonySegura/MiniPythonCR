@@ -4,13 +4,7 @@
 
 import grammar.MPGrammarLexer;
 import grammar.MPGrammarParser;
-import org.antlr.v4.runtime.ANTLRInputStream;
-import org.antlr.v4.runtime.CommonTokenStream;
-import org.antlr.v4.runtime.Parser;
-import org.antlr.v4.runtime.Token;
 
-import java.io.FileReader;
-import java.util.List;
 import com.textEditor.JCEditorMain;
 
 
