@@ -1413,7 +1413,7 @@ public class JCEditor extends JFrame {
 
 
             try{
-
+                guardarNuevo();
                 ANTLRInputStream input = new ANTLRInputStream(new FileReader(lista.get(arquivos.getSelectedIndex()).getArquivo().toString()));
                 scanner = new MPGrammarLexer(input);
                 CommonTokenStream tokens = new CommonTokenStream(scanner);
@@ -1434,7 +1434,7 @@ public class JCEditor extends JFrame {
                 scrollP.setBorder(null);
                 astPanel.add(scrollP, "Center");
 
-                panelPrincipal.setDividerLocation(650);
+                panelPrincipal.setDividerLocation(424);
 			    panelPrincipal.getRightComponent().setVisible(true);
 
             }

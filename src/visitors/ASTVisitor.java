@@ -45,6 +45,7 @@ public class ASTVisitor extends MPGrammarBaseVisitor{
         visit(ctx.statement(0));
         for(int i = 1; i <= ctx.statement().size() - 1; i++){
             visit(ctx.statement(i));
+
         }
 
         return null;
@@ -53,11 +54,12 @@ public class ASTVisitor extends MPGrammarBaseVisitor{
     @Override
     public Object visitStatdef(MPGrammarParser.StatdefContext ctx){
 
-        //DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(ctx.getClass().getSimpleName());
-        //nivelActual().add(nodo);
-        //agregarNivel(nodo);
+        DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(ctx.getClass().getSimpleName());
+        nivelActual().add(nodo);
+        agregarNivel(nodo);
         visit(ctx.defStatement());
 
+        //subirNivel();
         return null;
     }
 
@@ -71,11 +73,11 @@ public class ASTVisitor extends MPGrammarBaseVisitor{
     @Override
     public Object visitStatif(MPGrammarParser.StatifContext ctx){
 
-        //DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(ctx.getClass().getSimpleName());
-        //nivelActual().add(nodo);
-        //agregarNivel(nodo);
+        DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(ctx.getClass().getSimpleName());
+        nivelActual().add(nodo);
+        agregarNivel(nodo);
         visit(ctx.ifStatement());
-
+        //subirNivel();
         return null;
     }
 
@@ -88,11 +90,13 @@ public class ASTVisitor extends MPGrammarBaseVisitor{
      */
     @Override
     public Object visitStatret(MPGrammarParser.StatretContext ctx){
-        //DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(ctx.getClass().getSimpleName());
-        //nivelActual().add(nodo);
-        //agregarNivel(nodo);
+        DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(ctx.getClass().getSimpleName());
+        nivelActual().add(nodo);
+        agregarNivel(nodo);
         visit(ctx.returnStatement());
 
+
+        //subirNivel();
         return null;
     }
 
@@ -105,11 +109,12 @@ public class ASTVisitor extends MPGrammarBaseVisitor{
      */
     @Override
     public Object visitStatprint(MPGrammarParser.StatprintContext ctx){
-        //DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(ctx.getClass().getSimpleName());
-        //nivelActual().add(nodo);
-        //agregarNivel(nodo);
+        DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(ctx.getClass().getSimpleName());
+        nivelActual().add(nodo);
+        agregarNivel(nodo);
         visit(ctx.printStatement());
 
+        //subirNivel();
         return null;
     }
 
@@ -122,10 +127,12 @@ public class ASTVisitor extends MPGrammarBaseVisitor{
      */
     @Override
     public Object visitStatwhile(MPGrammarParser.StatwhileContext ctx){
-        //DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(ctx.getClass().getSimpleName());
-        //nivelActual().add(nodo);
-        //agregarNivel(nodo);
+        DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(ctx.getClass().getSimpleName());
+        nivelActual().add(nodo);
+        agregarNivel(nodo);
         visit(ctx.whileStatement());
+
+        //subirNivel();
 
         return null;
     }
@@ -139,11 +146,12 @@ public class ASTVisitor extends MPGrammarBaseVisitor{
      */
     @Override
     public Object visitStatassign(MPGrammarParser.StatassignContext ctx){
-        //DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(ctx.getClass().getSimpleName());
-        //nivelActual().add(nodo);
-        //agregarNivel(nodo);
+        DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(ctx.getClass().getSimpleName());
+        nivelActual().add(nodo);
+        agregarNivel(nodo);
         visit(ctx.assignStatement());
 
+        //subirNivel();
         return null;
     }
 
@@ -156,11 +164,12 @@ public class ASTVisitor extends MPGrammarBaseVisitor{
      */
     @Override
     public Object visitStatfncall(MPGrammarParser.StatfncallContext ctx){
-        //DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(ctx.getClass().getSimpleName());
-        //nivelActual().add(nodo);
-        //agregarNivel(nodo);
+        DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(ctx.getClass().getSimpleName());
+        nivelActual().add(nodo);
+        agregarNivel(nodo);
         visit(ctx.functionCallStatement());
 
+        //subirNivel();
         return null;
     }
 
@@ -176,8 +185,8 @@ public class ASTVisitor extends MPGrammarBaseVisitor{
         DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(ctx.getClass().getSimpleName());
         //Agrego los nodos terminales
         DefaultMutableTreeNode t1 = new DefaultMutableTreeNode(ctx.DEF().getClass().getSimpleName());
-        DefaultMutableTreeNode t2 = new DefaultMutableTreeNode(ctx.IDENTIFIER().getSymbol());
-        DefaultMutableTreeNode t3 = new DefaultMutableTreeNode(ctx.PIZQ().getSymbol());
+        DefaultMutableTreeNode t2 = new DefaultMutableTreeNode(ctx.IDENTIFIER().getText());
+        DefaultMutableTreeNode t3 = new DefaultMutableTreeNode(ctx.PIZQ().getText());
         nodo.add(t1);
         nodo.add(t2);
         nodo.add(t3);
@@ -190,8 +199,8 @@ public class ASTVisitor extends MPGrammarBaseVisitor{
         visit(ctx.argList());
 
         //Nodos terminales
-        DefaultMutableTreeNode t4 = new DefaultMutableTreeNode(ctx.PDER().getSymbol());
-        DefaultMutableTreeNode t5 = new DefaultMutableTreeNode(ctx.DPUNTOS().getSymbol());
+        DefaultMutableTreeNode t4 = new DefaultMutableTreeNode(ctx.PDER().getText());
+        DefaultMutableTreeNode t5 = new DefaultMutableTreeNode(ctx.DPUNTOS().getText());
         nodo.add(t4);
         nodo.add(t5);
 
@@ -215,7 +224,7 @@ public class ASTVisitor extends MPGrammarBaseVisitor{
     public Object visitMorearglist(MPGrammarParser.MorearglistContext ctx){
 
         DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(ctx.getClass().getSimpleName());
-        DefaultMutableTreeNode id = new DefaultMutableTreeNode(ctx.IDENTIFIER().getSymbol());
+        DefaultMutableTreeNode id = new DefaultMutableTreeNode(ctx.IDENTIFIER().getText());
         nodo.add(id);
         nivelActual().add(nodo);
         agregarNivel(nodo);
@@ -257,11 +266,11 @@ public class ASTVisitor extends MPGrammarBaseVisitor{
 
         //Se agregan todos los identificadores como nodos terminales
         for(TerminalNode n : ctx.IDENTIFIER()){
-            DefaultMutableTreeNode t = new DefaultMutableTreeNode(n.getSymbol());
+            DefaultMutableTreeNode t = new DefaultMutableTreeNode(n.getText());
             nivelActual().add(t);
         }
 
-        subirNivel();
+        //subirNivel();
         return null;
     }
 
@@ -276,7 +285,7 @@ public class ASTVisitor extends MPGrammarBaseVisitor{
     public Object visitIfstat(MPGrammarParser.IfstatContext ctx){
         DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(ctx.getClass().getSimpleName());
         //Terminal if
-        DefaultMutableTreeNode t1 = new DefaultMutableTreeNode(ctx.IF().getSymbol());
+        DefaultMutableTreeNode t1 = new DefaultMutableTreeNode(ctx.IF().getText());
         nodo.add(t1);
         nivelActual().add(nodo);
         agregarNivel(nodo);
@@ -290,7 +299,7 @@ public class ASTVisitor extends MPGrammarBaseVisitor{
         visit(ctx.sequence(0));
 
         //Terminal else y dos puntos
-        DefaultMutableTreeNode t3 = new DefaultMutableTreeNode(ctx.ELSE().getSymbol());
+        DefaultMutableTreeNode t3 = new DefaultMutableTreeNode(ctx.ELSE().getText());
         DefaultMutableTreeNode t4 = new DefaultMutableTreeNode(ctx.DPUNTOS().getClass().getSimpleName());
 
         //Se visita sequence de nuevo
@@ -313,14 +322,14 @@ public class ASTVisitor extends MPGrammarBaseVisitor{
     public Object visitWhilestat(MPGrammarParser.WhilestatContext ctx){
         DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(ctx.getClass().getSimpleName());
         //Terminal while
-        DefaultMutableTreeNode t1 = new DefaultMutableTreeNode(ctx.WHILE().getSymbol());
+        DefaultMutableTreeNode t1 = new DefaultMutableTreeNode(ctx.WHILE().getText());
         nodo.add(t1);
         nivelActual().add(nodo);
         agregarNivel(nodo);
         //Se visita expression
         visit(ctx.expression());
         //Terminal dos puntos
-        DefaultMutableTreeNode t2 = new DefaultMutableTreeNode(ctx.DPUNTOS().getSymbol());
+        DefaultMutableTreeNode t2 = new DefaultMutableTreeNode(ctx.DPUNTOS().getText());
         nodo.add(t2);
         //Se visita sequence
         visit(ctx.sequence());
@@ -342,7 +351,7 @@ public class ASTVisitor extends MPGrammarBaseVisitor{
 
         DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(ctx.getClass().getSimpleName());
         //Terminal return
-        DefaultMutableTreeNode t1 = new DefaultMutableTreeNode(ctx.RETURN().getSymbol());
+        DefaultMutableTreeNode t1 = new DefaultMutableTreeNode(ctx.RETURN().getText());
         nodo.add(t1);
         nivelActual().add(nodo);
         agregarNivel(nodo);
@@ -368,8 +377,8 @@ public class ASTVisitor extends MPGrammarBaseVisitor{
     @Override
     public Object visitPrintstat(MPGrammarParser.PrintstatContext ctx){
         DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(ctx.getClass().getSimpleName());
-        DefaultMutableTreeNode t1 = new DefaultMutableTreeNode(ctx.PRINT().getSymbol());
-        DefaultMutableTreeNode t2 = new DefaultMutableTreeNode(ctx.PIZQ().getSymbol());
+        DefaultMutableTreeNode t1 = new DefaultMutableTreeNode(ctx.PRINT().getText());
+        DefaultMutableTreeNode t2 = new DefaultMutableTreeNode(ctx.PIZQ().getText());
         nodo.add(t1);
         nodo.add(t2);
         nivelActual().add(nodo);
@@ -377,8 +386,10 @@ public class ASTVisitor extends MPGrammarBaseVisitor{
         //Se visita expression
         visit(ctx.expression());
         //Terminales
-        DefaultMutableTreeNode t3 = new DefaultMutableTreeNode(ctx.PDER().getSymbol());
+        DefaultMutableTreeNode t3 = new DefaultMutableTreeNode(ctx.PDER().getText());
         DefaultMutableTreeNode t4 = new DefaultMutableTreeNode(ctx.NEWLINE().getClass().getSimpleName());
+        nodo.add(t3);
+        nodo.add(t4);
 
         //subirNivel();
 
@@ -395,8 +406,8 @@ public class ASTVisitor extends MPGrammarBaseVisitor{
     @Override
     public Object visitAssignstat(MPGrammarParser.AssignstatContext ctx){
         DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(ctx.getClass().getSimpleName());
-        DefaultMutableTreeNode t1 = new DefaultMutableTreeNode(ctx.IDENTIFIER().getSymbol());
-        DefaultMutableTreeNode t2 = new DefaultMutableTreeNode(ctx.ASSIGN().getSymbol());
+        DefaultMutableTreeNode t1 = new DefaultMutableTreeNode(ctx.IDENTIFIER().getText());
+        DefaultMutableTreeNode t2 = new DefaultMutableTreeNode(ctx.ASSIGN().getText());
         nodo.add(t1);
         nodo.add(t2);
         nivelActual().add(nodo);
@@ -426,11 +437,11 @@ public class ASTVisitor extends MPGrammarBaseVisitor{
         agregarNivel(nodo);
         //Se visita primitiveExpression
         visit(ctx.primitiveExpression());
-        DefaultMutableTreeNode t1 = new DefaultMutableTreeNode(ctx.PIZQ().getSymbol());
+        DefaultMutableTreeNode t1 = new DefaultMutableTreeNode(ctx.PIZQ().getText());
         nodo.add(t1);
         //Se visita expressionList
         visit(ctx.expressionList());
-        DefaultMutableTreeNode t2 = new DefaultMutableTreeNode(ctx.PDER().getSymbol());
+        DefaultMutableTreeNode t2 = new DefaultMutableTreeNode(ctx.PDER().getText());
         DefaultMutableTreeNode t3 = new DefaultMutableTreeNode(ctx.NEWLINE().getClass().getSimpleName());
         nodo.add(t2);
         nodo.add(t3);
@@ -523,23 +534,23 @@ public class ASTVisitor extends MPGrammarBaseVisitor{
         for(int i = 0; i < ctx.additionExpression().size(); i++) {
 
             if (!ctx.IGUAL().isEmpty()) {
-                DefaultMutableTreeNode ig = new DefaultMutableTreeNode(ctx.IGUAL(i).getSymbol());
+                DefaultMutableTreeNode ig = new DefaultMutableTreeNode(ctx.IGUAL(i).getText());
                 nodo.add(ig);
             }
             if (!ctx.MENOR_QUE().isEmpty()) {
-                DefaultMutableTreeNode mq = new DefaultMutableTreeNode(ctx.MENOR_QUE(i).getSymbol());
+                DefaultMutableTreeNode mq = new DefaultMutableTreeNode(ctx.MENOR_QUE(i).getText());
                 nodo.add(mq);
             }
             if (!ctx.MAYOR_QUE().isEmpty()) {
-                DefaultMutableTreeNode maq = new DefaultMutableTreeNode(ctx.MAYOR_QUE(i).getSymbol());
+                DefaultMutableTreeNode maq = new DefaultMutableTreeNode(ctx.MAYOR_QUE(i).getText());
                 nodo.add(maq);
             }
             if (!ctx.MAYOR_QUE_IG().isEmpty()) {
-                DefaultMutableTreeNode mqi = new DefaultMutableTreeNode(ctx.MAYOR_QUE_IG(i).getSymbol());
+                DefaultMutableTreeNode mqi = new DefaultMutableTreeNode(ctx.MAYOR_QUE_IG(i).getText());
                 nodo.add(mqi);
             }
             if (!ctx.MENOR_QUE_IG().isEmpty()) {
-                DefaultMutableTreeNode meqi = new DefaultMutableTreeNode(ctx.MENOR_QUE_IG(i).getSymbol());
+                DefaultMutableTreeNode meqi = new DefaultMutableTreeNode(ctx.MENOR_QUE_IG(i).getText());
                 nodo.add(meqi);
             }
             //Se visita additionExpression
@@ -589,11 +600,11 @@ public class ASTVisitor extends MPGrammarBaseVisitor{
         agregarNivel(nodo);
         for (int i = 0; i < ctx.multiplicationExpression().size(); i++){
             if(!ctx.SUMA().isEmpty()){
-                DefaultMutableTreeNode suma = new DefaultMutableTreeNode(ctx.SUMA(i).getSymbol());
+                DefaultMutableTreeNode suma = new DefaultMutableTreeNode(ctx.SUMA(i).getText());
                 nodo.add(suma);
             }
             else if(!ctx.RESTA().isEmpty()){
-                DefaultMutableTreeNode resta = new DefaultMutableTreeNode(ctx.RESTA(i).getSymbol());
+                DefaultMutableTreeNode resta = new DefaultMutableTreeNode(ctx.RESTA(i).getText());
                 nodo.add(resta);
             }
             visit(ctx.multiplicationExpression(i));
@@ -640,11 +651,11 @@ public class ASTVisitor extends MPGrammarBaseVisitor{
 
         for(int i = 0; i < ctx.elementExpression().size(); i++){
             if(!ctx.MUL().isEmpty()){
-                DefaultMutableTreeNode mul = new DefaultMutableTreeNode(ctx.MUL(i).getSymbol());
+                DefaultMutableTreeNode mul = new DefaultMutableTreeNode(ctx.MUL(i).getText());
                 nodo.add(mul);
             }
             else if(!ctx.DIV().isEmpty()){
-                DefaultMutableTreeNode div = new DefaultMutableTreeNode(ctx.DIV(i).getSymbol());
+                DefaultMutableTreeNode div = new DefaultMutableTreeNode(ctx.DIV(i).getText());
                 nodo.add(div);
             }
             visit(ctx.elementExpression(i));
@@ -706,7 +717,7 @@ public class ASTVisitor extends MPGrammarBaseVisitor{
     public Object visitFncallexp(MPGrammarParser.FncallexpContext ctx){
 
         DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(ctx.getClass().getSimpleName());
-        DefaultMutableTreeNode t1 = new DefaultMutableTreeNode(ctx.IDENTIFIER().getSymbol());
+        DefaultMutableTreeNode t1 = new DefaultMutableTreeNode(ctx.IDENTIFIER().getText());
         DefaultMutableTreeNode t2 = new DefaultMutableTreeNode(ctx.PIZQ().getSymbol());
         nodo.add(t1);
         nodo.add(t2);
@@ -715,7 +726,7 @@ public class ASTVisitor extends MPGrammarBaseVisitor{
 
         visit(ctx.expressionList());
 
-        DefaultMutableTreeNode t3 = new DefaultMutableTreeNode(ctx.PDER().getSymbol());
+        DefaultMutableTreeNode t3 = new DefaultMutableTreeNode(ctx.PDER().getText());
         nodo.add(t3);
 
         //subirNivel();
@@ -776,7 +787,7 @@ public class ASTVisitor extends MPGrammarBaseVisitor{
         agregarNivel(nodo);
 
         for(int i = 0; i < ctx.expression().size(); i++){
-            DefaultMutableTreeNode coma = new DefaultMutableTreeNode(ctx.COMA(i).getSymbol());
+            DefaultMutableTreeNode coma = new DefaultMutableTreeNode(ctx.COMA(i).getText());
             nodo.add(coma);
             visit(ctx.expression(i));
         }
@@ -797,7 +808,7 @@ public class ASTVisitor extends MPGrammarBaseVisitor{
     public Object visitIntexp(MPGrammarParser.IntexpContext ctx){
 
         DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(ctx.getClass().getSimpleName());
-        DefaultMutableTreeNode t = new DefaultMutableTreeNode(ctx.INTEGER().getSymbol());
+        DefaultMutableTreeNode t = new DefaultMutableTreeNode(ctx.INTEGER().getText());
         nodo.add(t);
         nivelActual().add(nodo);
 
@@ -816,7 +827,7 @@ public class ASTVisitor extends MPGrammarBaseVisitor{
     @Override
     public Object visitStrexp(MPGrammarParser.StrexpContext ctx){
         DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(ctx.getClass().getSimpleName());
-        DefaultMutableTreeNode t = new DefaultMutableTreeNode(ctx.STRING().getSymbol());
+        DefaultMutableTreeNode t = new DefaultMutableTreeNode(ctx.STRING().getText());
         nodo.add(t);
         nivelActual().add(nodo);
         //subirNivel();
@@ -835,11 +846,11 @@ public class ASTVisitor extends MPGrammarBaseVisitor{
     public Object visitIdexp(MPGrammarParser.IdexpContext ctx){
 
         DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(ctx.getClass().getSimpleName());
-        DefaultMutableTreeNode t = new DefaultMutableTreeNode(ctx.IDENTIFIER().getSymbol());
+        DefaultMutableTreeNode t = new DefaultMutableTreeNode(ctx.IDENTIFIER().getText());
         nodo.add(t);
         nivelActual().add(nodo);
 
-        subirNivel();
+        //subirNivel();
 
         return null;
     }
@@ -855,10 +866,10 @@ public class ASTVisitor extends MPGrammarBaseVisitor{
     public Object visitChaexp(MPGrammarParser.ChaexpContext ctx){
 
         DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(ctx.getClass().getSimpleName()) ;
-        DefaultMutableTreeNode t = new DefaultMutableTreeNode(ctx.CHAR().getSymbol());
+        DefaultMutableTreeNode t = new DefaultMutableTreeNode(ctx.CHAR().getText());
         nodo.add(t);
         nivelActual().add(nodo);
-        subirNivel();
+        //subirNivel();
 
         return null;
     }
@@ -874,12 +885,12 @@ public class ASTVisitor extends MPGrammarBaseVisitor{
     public Object visitPizqexp(MPGrammarParser.PizqexpContext ctx){
 
         DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(ctx.getClass().getSimpleName());
-        DefaultMutableTreeNode t1 = new DefaultMutableTreeNode(ctx.PIZQ().getSymbol());
+        DefaultMutableTreeNode t1 = new DefaultMutableTreeNode(ctx.PIZQ().getText());
         nodo.add(t1);
         nivelActual().add(nodo);
         agregarNivel(nodo);
         visit(ctx.expression());
-        DefaultMutableTreeNode t2 = new DefaultMutableTreeNode(ctx.PDER().getSymbol());
+        DefaultMutableTreeNode t2 = new DefaultMutableTreeNode(ctx.PDER().getText());
         nodo.add(t2);
 
         //subirNivel();
@@ -918,14 +929,14 @@ public class ASTVisitor extends MPGrammarBaseVisitor{
     public Object visitLenexp(MPGrammarParser.LenexpContext ctx){
 
         DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(ctx.getClass().getSimpleName());
-        DefaultMutableTreeNode t1 = new DefaultMutableTreeNode(ctx.LEN().getSymbol());
-        DefaultMutableTreeNode t2 = new DefaultMutableTreeNode(ctx.PIZQ().getSymbol());
+        DefaultMutableTreeNode t1 = new DefaultMutableTreeNode(ctx.LEN().getText());
+        DefaultMutableTreeNode t2 = new DefaultMutableTreeNode(ctx.PIZQ().getText());
         nodo.add(t1);
         nodo.add(t2);
         nivelActual().add(nodo);
         agregarNivel(nodo);
         visit(ctx.expression());
-        DefaultMutableTreeNode t3 = new DefaultMutableTreeNode(ctx.PDER().getSymbol());
+        DefaultMutableTreeNode t3 = new DefaultMutableTreeNode(ctx.PDER().getText());
         nodo.add(t3);
 
         //subirNivel();
@@ -962,12 +973,12 @@ public class ASTVisitor extends MPGrammarBaseVisitor{
     public Object visitListExpression(MPGrammarParser.ListExpressionContext ctx){
 
         DefaultMutableTreeNode nodo = new DefaultMutableTreeNode(ctx.getClass().getSimpleName());
-        DefaultMutableTreeNode t1 = new DefaultMutableTreeNode(ctx.CIZQ().getSymbol());
+        DefaultMutableTreeNode t1 = new DefaultMutableTreeNode(ctx.CIZQ().getText());
         nodo.add(t1);
         nivelActual().add(nodo);
         agregarNivel(nodo);
         visit(ctx.expressionList());
-        DefaultMutableTreeNode t2 = new DefaultMutableTreeNode(ctx.CDER().getSymbol());
+        DefaultMutableTreeNode t2 = new DefaultMutableTreeNode(ctx.CDER().getText());
         nodo.add(t2);
 
         //subirNivel();

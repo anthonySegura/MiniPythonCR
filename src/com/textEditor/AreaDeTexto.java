@@ -129,7 +129,6 @@ public class AreaDeTexto extends JPanel {
                     columna = caretPos - display.getLineStartOffset(fila);
 
                     fila += 1;
-                    columna += 1;
 
                     linAndCol.setText("<html><div style = 'text-align: right;'><font color = white>" + fila + ":" + columna  + "</font></div></html>");
                 }
