@@ -120,12 +120,12 @@ public class JCEditor extends JFrame {
 		at = new AreaDeTexto();
 
 		/* Cria objetos de menu */
-		menu = new JMenu("Arquivo");
+		menu = new JMenu("Archivo");
 		editar = new JMenu("Editar");
-		projeto = new JMenu("Projeto");
-		formatar = new JMenu("Formatar");
+		projeto = new JMenu("Proyecto");
+		formatar = new JMenu("Formato");
 		linguagemMenu = new JMenu("Linguagem");
-		preferencias = new JMenu("Preferências");
+		preferencias = new JMenu("Preferencias");
 		lookAndFeel = new JMenu("LAF");
 		tema = new JMenu("Tema");
 		sobre = new JMenu("Sobre");
@@ -140,8 +140,8 @@ public class JCEditor extends JFrame {
 
 		/* Cria a primeira aba do programa, esta aba é adicionada a uma ArrayList. */
 		lista.add(at);
-		arquivos.addTab("Sem nome", at);
-		arquivos.setToolTipTextAt(arquivos.getSelectedIndex(), "Sem nome");
+		arquivos.addTab("Sin Nombre", at);
+		arquivos.setToolTipTextAt(arquivos.getSelectedIndex(), "Sin Nombre");
 
 		int i = arquivos.getSelectedIndex();	// índice a aba atual
 		arquivos.setTabComponentAt(i, new ButtonTabComponent(arquivos, lista, arquivosAbertos));	// adiciona o botão de fechar à aba
@@ -162,35 +162,35 @@ public class JCEditor extends JFrame {
 		/* Código de configuração dos menus de funções, sua estrutura é:
 		JMenuItem, String(nome do menu), String(imagem do menu), ActionListener, KeyEvent, ActionEvent, JMenu
 		(menu ao qual o JMenuItem pertence) */
-		novoArq = configMenu("Novo", "imagens/novo.png", new NovoListener(), KeyEvent.VK_N, ActionEvent.CTRL_MASK, menu);
+		novoArq = configMenu("Nuevo", "imagens/novo.png", new NovoListener(), KeyEvent.VK_N, ActionEvent.CTRL_MASK, menu);
 		abrirArq = configMenu("Abrir", "imagens/abrir.png", new AbrirListener(), KeyEvent.VK_O, ActionEvent.CTRL_MASK, menu);
-		salvarArq = configMenu("Salvar", "imagens/salvar.png", new SalvarListener(), KeyEvent.VK_S, ActionEvent.CTRL_MASK, menu);
-		salvarArqComo = configMenu("Salvar como", "imagens/salvarComo.png", new SalvarComoListener(), KeyEvent.VK_S, Event.CTRL_MASK | Event.SHIFT_MASK, menu);
+		salvarArq = configMenu("Guardar", "imagens/salvar.png", new SalvarListener(), KeyEvent.VK_S, ActionEvent.CTRL_MASK, menu);
+		salvarArqComo = configMenu("Guardar como", "imagens/salvarComo.png", new SalvarComoListener(), KeyEvent.VK_S, Event.CTRL_MASK | Event.SHIFT_MASK, menu);
 		menu.addSeparator();
 		imprimir = configMenu("Imprimir", "imagens/imprimir.png", new ImprimirPotigolListener(), KeyEvent.VK_P, ActionEvent.CTRL_MASK, menu);
 		executarPotigol = configMenu("Executar Potigol", "imagens/play.png", new runListener(), KeyEvent.VK_F9, 0, menu);
 		fecharAba = configMenu("Fechar aba", "imagens/fecharAba.png", new FecharAbaListener(), KeyEvent.VK_W, ActionEvent.CTRL_MASK, menu);
 		menu.addSeparator();
-		sair = configMenu("Sair", "imagens/sair.png", new SairListener(), KeyEvent.VK_F4, InputEvent.ALT_DOWN_MASK, menu);
-		desfazer = configMenu("Desfazer", "imagens/desfazer.png", new DesfazerListener(), KeyEvent.VK_Z, ActionEvent.CTRL_MASK, editar);
-		refazer = configMenu("Refazer", "imagens/refazer.png", new RefazerListener(), KeyEvent.VK_Y, ActionEvent.CTRL_MASK, editar);
+		sair = configMenu("Dejar", "imagens/sair.png", new SairListener(), KeyEvent.VK_F4, InputEvent.ALT_DOWN_MASK, menu);
+		desfazer = configMenu("Deshacer", "imagens/desfazer.png", new DesfazerListener(), KeyEvent.VK_Z, ActionEvent.CTRL_MASK, editar);
+		refazer = configMenu("Rehacer", "imagens/refazer.png", new RefazerListener(), KeyEvent.VK_Y, ActionEvent.CTRL_MASK, editar);
 		editar.addSeparator();
-		recortar = configMenu("Recortar", "imagens/recortar.png", new RecortarListener(), KeyEvent.VK_X, ActionEvent.CTRL_MASK, editar);
+		recortar = configMenu("Cortar", "imagens/recortar.png", new RecortarListener(), KeyEvent.VK_X, ActionEvent.CTRL_MASK, editar);
 		copiar = configMenu("Copiar", "imagens/copiar.png", new CopiarListener(), KeyEvent.VK_C, ActionEvent.CTRL_MASK, editar);
-		colar = configMenu("Colar", "imagens/colar.png", new ColarListener(), KeyEvent.VK_V, ActionEvent.CTRL_MASK, editar);
+		colar = configMenu("Pegar", "imagens/colar.png", new ColarListener(), KeyEvent.VK_V, ActionEvent.CTRL_MASK, editar);
 		editar.addSeparator();
-		selecionarTudo = configMenu("Selecionar tudo", "imagens/selecionarTudo.png", new SelecionarTudoListener(), KeyEvent.VK_A, ActionEvent.CTRL_MASK, editar);
+		selecionarTudo = configMenu("Selecionar todo", "imagens/selecionarTudo.png", new SelecionarTudoListener(), KeyEvent.VK_A, ActionEvent.CTRL_MASK, editar);
 		sobrePotigol = configMenu("Potigol", "imagens/potigol.png", new SobrePotigolListener(), KeyEvent.VK_F4, 0, sobre);
-		sobrePC = configMenu("Sobre este PC", "imagens/config.png", new SobrePCListener(), KeyEvent.VK_F3, 0, sobre);
+		sobrePC = configMenu("Sobre esta PC", "imagens/config.png", new SobrePCListener(), KeyEvent.VK_F3, 0, sobre);
 		versao = configMenu("Versão", "imagens/versaoIcone.png", new VersaoListener(), KeyEvent.VK_F1, 0, sobre);
 		pesquisar = configMenu("Pesquisar","imagens/pesquisar.png", new PesquisarListener(), KeyEvent.VK_F, ActionEvent.CTRL_MASK, formatar);
 		fonte = configMenu("Fonte", "imagens/fonte.png", new EscolherFonteListener(), KeyEvent.VK_R, ActionEvent.CTRL_MASK, formatar);
 		formatar.addSeparator();
 		fontePadrao = configMenu("Normal", "imagens/fontePadrao.png", new FontePadraoListener(), KeyEvent.VK_0, Event.CTRL_MASK, formatar);
 		aumentarFonte = configMenu("Aumentar", "imagens/aumentarFonte.png", new AumentarFonteListener(), KeyEvent.VK_EQUALS, ActionEvent.CTRL_MASK, formatar);
-		diminuirFonte = configMenu("Diminuir", "imagens/diminuirFonte.png", new DiminuirFonteListener(), KeyEvent.VK_MINUS, ActionEvent.CTRL_MASK, formatar);
+		diminuirFonte = configMenu("Disminuir", "imagens/diminuirFonte.png", new DiminuirFonteListener(), KeyEvent.VK_MINUS, ActionEvent.CTRL_MASK, formatar);
 		formatar.addSeparator();
-		addProjeto = configMenu("Adicionar", "imagens/addProjeto.png", new AddProjetoListener(), KeyEvent.VK_O, Event.CTRL_MASK | Event.SHIFT_MASK, projeto);
+		addProjeto = configMenu("Agregar", "imagens/addProjeto.png", new AddProjetoListener(), KeyEvent.VK_O, Event.CTRL_MASK | Event.SHIFT_MASK, projeto);
 		delProjeto = configMenu("Remover", "imagens/remover.png", new RemoverProjetoListener(), KeyEvent.VK_D, Event.CTRL_MASK | Event.SHIFT_MASK, projeto);
 		props = configMenu("Propriedades", "imagens/propriedades.png", new PropriedadesProjetoListener(), KeyEvent.VK_A, Event.CTRL_MASK | Event.SHIFT_MASK, projeto);
 
@@ -262,19 +262,19 @@ public class JCEditor extends JFrame {
 
 		/* Código de configuração dos JButtons da JToolBar.
 		O método recebe o botão a ser configurado, seu ToolTipText, seu ícone e seu listener */
-		bNovo = configBtns("Novo arquivo", "imagens/25x25/novo25.png", new NovoListener());
-		bAbrir = configBtns("Abrir arquivo", "imagens/25x25/abrir25.png", new AbrirListener());
-		bSalvar = configBtns("Salvar arquivo", "imagens/25x25/salvar25.png", new SalvarListener());
-		bSalvarComo = configBtns("Salvar como", "imagens/25x25/salvarComo25.png", new SalvarComoListener());
+		bNovo = configBtns("Nuevo archivo", "imagens/25x25/novo25.png", new NovoListener());
+		bAbrir = configBtns("Abrir archivo", "imagens/25x25/abrir25.png", new AbrirListener());
+		bSalvar = configBtns("Guardar archivo", "imagens/25x25/salvar25.png", new SalvarListener());
+		bSalvarComo = configBtns("Guardar como", "imagens/25x25/salvarComo25.png", new SalvarComoListener());
 		barraS.addSeparator();
 		bCopiar = configBtns("Copiar", "imagens/25x25/copiar25.png", new CopiarListener());
-		bColar = configBtns("Colar", "imagens/25x25/colar25.png", new ColarListener());
-		bRecortar = configBtns("Recortar", "imagens/25x25/recortar25.png", new RecortarListener());
-		bDesfazer = configBtns("Desfazer", "imagens/25x25/desfazer25.png", new DesfazerListener());
-		bRefazer = configBtns("Refazer", "imagens/25x25/refazer25.png", new RefazerListener());
-		bPesquisar = configBtns("Pesquisar", "imagens/25x25/pesquisar25.png", new PesquisarListener());
+		bColar = configBtns("Pegar", "imagens/25x25/colar25.png", new ColarListener());
+		bRecortar = configBtns("Cortar", "imagens/25x25/recortar25.png", new RecortarListener());
+		bDesfazer = configBtns("Deshacer", "imagens/25x25/desfazer25.png", new DesfazerListener());
+		bRefazer = configBtns("Rehacer", "imagens/25x25/refazer25.png", new RefazerListener());
+		bPesquisar = configBtns("Examinar", "imagens/25x25/pesquisar25.png", new PesquisarListener());
 		barraS.addSeparator();
-		BtnCompilar = configBtns("Executar", "imagens/25x25/play25.png", new runListener());
+		BtnCompilar = configBtns("Ejecutar", "imagens/25x25/play25.png", new runListener());
 		BtnAST = configBtns("Generar AST", "imagens/25x25/estrutura25.png", new showASTListener());
 		BtnCompilar.setEnabled(true);
 		bImprimir = configBtns("Imprimir", "imagens/25x25/imprimir25.png", new ImprimirPotigolListener());
@@ -534,8 +534,8 @@ public class JCEditor extends JFrame {
 				} else {
 					nomeArquivo = lista.get(i).getArquivo().getName();
 				}
-				int r = JOptionPane.showConfirmDialog(JCEditor.this, "Você deseja salvar o arquivo \"" + nomeArquivo + "\"?",
-					"Sair", JOptionPane.YES_NO_CANCEL_OPTION);
+				int r = JOptionPane.showConfirmDialog(JCEditor.this, "Desea guargar el archivo \"" + nomeArquivo + "\"?",
+					"Salir", JOptionPane.YES_NO_CANCEL_OPTION);
 				lista.get(i).setTexto(lista.get(i).getRSyntax().getText());
 				if (r == JOptionPane.OK_OPTION) {
 					if (lista.get(i).getArquivo() == null) {
@@ -638,7 +638,7 @@ public class JCEditor extends JFrame {
 
 		at = new AreaDeTexto();
 		lista.add(at);
-		arquivos.addTab("Sem nome", at);
+		arquivos.addTab("Sin Nombre", at);
 		arquivos.setSelectedIndex(lista.size() - 1);
 		arquivos.setTabComponentAt(arquivos.getSelectedIndex(), new ButtonTabComponent(arquivos, lista, arquivosAbertos));
 		arquivos.setTitleAt(arquivos.getSelectedIndex(), arquivo.getName());
@@ -804,7 +804,7 @@ public class JCEditor extends JFrame {
 	private void fecharAba(int indice) {
 		if (indice != -1 && lista.size() != 1) {
 			if (lista.get(indice).arquivoModificado()) {
-				int r = JOptionPane.showConfirmDialog(null, "Você deseja salvar o arquivo?",
+				int r = JOptionPane.showConfirmDialog(null, "Desea guardar el archivo?",
 					"Fechar", JOptionPane.YES_NO_CANCEL_OPTION);
 				if (r == JOptionPane.OK_OPTION) {
 					lista.get(indice).setTexto(lista.get(indice).getRSyntax().getText());
@@ -978,14 +978,14 @@ public class JCEditor extends JFrame {
 		public void actionPerformed(ActionEvent ev) {
 			at = new AreaDeTexto();
 			lista.add(at);
-			arquivos.addTab("Sem nome", at);
+			arquivos.addTab("Sin Nombre", at);
 			arquivos.setSelectedIndex(lista.size() - 1);
 
 			int i = arquivos.getSelectedIndex();
 			arquivos.setTabComponentAt(i, new ButtonTabComponent(arquivos, lista, arquivosAbertos));
 
 			lista.get(arquivos.getSelectedIndex()).getRSyntax().setSyntaxEditingStyle(SyntaxConstants.SYNTAX_STYLE_NONE);
-			arquivos.setToolTipTextAt(arquivos.getSelectedIndex(), "Sem nome");
+			arquivos.setToolTipTextAt(arquivos.getSelectedIndex(), "Sin Nombre");
 			linguagem.setText(lista.get(arquivos.getSelectedIndex()).getLinguagem() + "   ");
 			bg2.clearSelection();
 			carregarTema(sTema);
