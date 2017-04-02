@@ -1,8 +1,10 @@
 package exceptions;
 
 import com.textEditor.JCEditor;
-import org.antlr.v4.runtime.*;
-import org.antlr.v4.runtime.atn.ATN;
+import org.antlr.v4.runtime.ConsoleErrorListener;
+import org.antlr.v4.runtime.Parser;
+import org.antlr.v4.runtime.RecognitionException;
+import org.antlr.v4.runtime.Recognizer;
 
 import java.util.Collections;
 import java.util.List;
@@ -10,12 +12,10 @@ import java.util.List;
 /**
  * Created by jomi_ on 30/03/2017.
  */
-public class TokensExeption extends ConsoleErrorListener {
+public class TokensException extends ConsoleErrorListener {
 
     @Override
     public void syntaxError(Recognizer<?, ?> recognizer, Object offendingSymbol, int line, int charPositionInLine, String msg, RecognitionException e) {
-        List<String> stack = ((Parser)recognizer).getRuleInvocationStack();
-        Collections.reverse(stack);
         String tmp = JCEditor.consoleTextArea.getText() + "\n";
         tmp += "Línea " + line + ":" + charPositionInLine + " " + msg + "\n";
         JCEditor.showMessage(tmp);

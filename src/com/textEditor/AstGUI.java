@@ -13,8 +13,12 @@ public class AstGUI extends JPanel{
 
     private JTree arbol;
 
-    public AstGUI(DefaultMutableTreeNode root){
+    public AstGUI(){
 
+    }
+
+
+    public void setTree(DefaultMutableTreeNode root){
         arbol = new JTree(root);
 
         this.setLayout(new BorderLayout());
@@ -30,7 +34,7 @@ public class AstGUI extends JPanel{
         renderer.setLeafIcon(leafIcon);
 
         expandeNodes();
-
+        repaint();
     }
 
     private void expandeNodes(){

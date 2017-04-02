@@ -21,6 +21,14 @@ tokens { INDENT, DEDENT }
   public Token nextToken() {
     return denter.nextToken();
   }
+
+  @Override
+   public void notifyListeners(LexerNoViableAltException e) {
+     String text = this._input.getText(Interval.of(this._tokenStartCharIndex, this._input.index()));
+     String msg = "error reconociendo token : \'" + this.getErrorDisplay(text) + "\'";
+     ANTLRErrorListener listener = this.getErrorListenerDispatch();
+     listener.syntaxError(this, (Object)null, this._tokenStartLine, this._tokenStartCharPositionInLine, msg, e);
+  }
 }
 
 
@@ -55,7 +63,6 @@ DEF         :   'def';
 IF          :   'if';
 ELSE        :   'else';
 WHILE       :   'while';
-FOR         :   'for';
 RETURN      :   'return';
 PRINT       :   'print';
 LEN         :   'len';
@@ -63,16 +70,20 @@ LEN         :   'len';
 
 //Elementos ignorados
 COMMENT     :  '#'.*?'\r'?'\n' -> skip ;
-WS          :  [ \t]+ -> skip ;
+MULTILINE_COMMENT : '“' (COMILLAS | . )*? '”' -> skip;
+
+WS          :  [ \t]+ -> skip;
 
 //Expresiones regulares
-IDENTIFIER  :   CharInicial CharContenido* ;
+IDENTIFIER  :   CharContenido CharContenido* ;
 INTEGER
             :	'0'
         	| '1'..'9' ('0'..'9')*
+        	| '0'..'9' '.' ('0'..'9')+
         	;
+
 STRING      :  '"' ('""'|~'"')* '"' ;
-CHAR        :  '\'' ('A'..'Z' | 'a'..'z' | '0'..'9'| '_') '\'';
+CHAR        :  '\'' ('A'..'Z' | 'a'..'z' | '0'..'9'| '_' | SYMBOLS) '\'';
 NEWLINE     :  ('\r'? '\n' ' '*);
 
 
@@ -101,7 +112,11 @@ CharInicial
    | '\uFDF0'..'\uFFFD'
    ;
 
+fragment
+ COMILLAS  :  '“' | '”';
 
+fragment
+ SYMBOLS   : '+' | '-' | '*' | '/' | '@' | '{' | '[' | ']';
 
 /**
 

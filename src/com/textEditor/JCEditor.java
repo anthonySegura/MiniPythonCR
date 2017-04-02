@@ -32,6 +32,7 @@ import javax.swing.tree.TreePath;
 
 import exceptions.DefaultError;
 import exceptions.SyntaxException;
+import exceptions.TokensException;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
@@ -98,6 +99,7 @@ public class JCEditor extends JFrame {
 
 	    this.scanner = scanner;
 	    this.parser = parser;
+        ast = new AstGUI();
 		setTitle("JCEditor");
 		construirGUI();
 
@@ -1272,40 +1274,31 @@ public class JCEditor extends JFrame {
     }
 
 	private void compilar(){
+
         try{
 
             ANTLRInputStream input = new ANTLRInputStream(new FileReader(lista.get(arquivos.getSelectedIndex()).getArquivo().toString()));
             scanner = new MPGrammarLexer(input);
+            scanner.removeErrorListeners();
+            scanner.addErrorListener(new TokensException());
+
             CommonTokenStream tokens = new CommonTokenStream(scanner);
+
             parser = new MPGrammarParser(tokens);
 
             //Sobrescritura de las excepciones
             parser.removeErrorListeners();
             parser.addErrorListener(new SyntaxException());
+
             parser.setErrorHandler(new DefaultError());
 
             ParseTree tree = parser.program();
 
-        }
-        catch (Exception e){
-            showMessage("Error ");
-        }try{
-
-            ANTLRInputStream input = new ANTLRInputStream(new FileReader(lista.get(arquivos.getSelectedIndex()).getArquivo().toString()));
-            scanner = new MPGrammarLexer(input);
-            CommonTokenStream tokens = new CommonTokenStream(scanner);
-            parser = new MPGrammarParser(tokens);
-
-            //Sobrescritura de las excepciones
-            parser.removeErrorListeners();
-            parser.addErrorListener(new SyntaxException());
-            parser.setErrorHandler(new DefaultError());
-
-            ParseTree tree = parser.program();
 
         }
         catch (Exception e){
             showMessage("Error ");
+            e.printStackTrace();
         }
     }
 	
@@ -1408,41 +1401,64 @@ public class JCEditor extends JFrame {
 		}
 	}
 
+	private void makeGUITree(){
+        try{
+
+            ANTLRInputStream input = new ANTLRInputStream(new FileReader(lista.get(arquivos.getSelectedIndex()).getArquivo().toString()));
+            scanner = new MPGrammarLexer(input);
+            scanner.removeErrorListeners();
+            scanner.addErrorListener(new TokensException());
+
+            CommonTokenStream tokens = new CommonTokenStream(scanner);
+
+            parser = new MPGrammarParser(tokens);
+
+            //Sobrescritura de las excepciones
+            parser.removeErrorListeners();
+            parser.addErrorListener(new SyntaxException());
+
+            parser.setErrorHandler(new DefaultError());
+
+            ParseTree tree = parser.program();
+            ASTVisitor visitor = new ASTVisitor();
+            visitor.visit(tree);
+
+            ast = new AstGUI();
+            ast.setTree(visitor.getAstGUI());
+            JScrollPane scrollP = new JScrollPane(ast);
+            scrollP.setBorder(null);
+            astPanel.removeAll();
+            astPanel.add(scrollP, "Center");
+
+            panelPrincipal.setDividerLocation(424);
+            panelPrincipal.getRightComponent().setVisible(true);
+            panelPrincipal.getRightComponent().revalidate();
+
+
+        }
+        catch (Exception e){
+            showMessage("Error ");
+            e.printStackTrace();
+        }
+    }
+
+
     private class showASTListener implements ActionListener {
 	    public void actionPerformed(ActionEvent ev) {
+            consoleTextArea.setText("");
+            if (lista.get(arquivos.getSelectedIndex()).getArquivo() != null) {
 
-
-            try{
+                if (lista.get(arquivos.getSelectedIndex()).arquivoModificado()) {
+                    lista.get(arquivos.getSelectedIndex()).salvar(lista.get(arquivos.getSelectedIndex()).getRSyntax().getText());
+                    definirTitulo();
+                }
+                makeGUITree();
+            }
+            //Crear el archivo
+            else {
                 guardarNuevo();
-                ANTLRInputStream input = new ANTLRInputStream(new FileReader(lista.get(arquivos.getSelectedIndex()).getArquivo().toString()));
-                scanner = new MPGrammarLexer(input);
-                CommonTokenStream tokens = new CommonTokenStream(scanner);
-                parser = new MPGrammarParser(tokens);
-
-                //Sobrescritura de las excepciones
-                parser.removeErrorListeners();
-                parser.addErrorListener(new SyntaxException());
-                parser.setErrorHandler(new DefaultError());
-
-                ParseTree tree = parser.program();
-                ASTVisitor visitor = new ASTVisitor();
-                visitor.visit(tree);
-
-                ast = new AstGUI(visitor.getAstGUI());
-
-                JScrollPane scrollP = new JScrollPane(ast);
-                scrollP.setBorder(null);
-                astPanel.add(scrollP, "Center");
-
-                panelPrincipal.setDividerLocation(424);
-			    panelPrincipal.getRightComponent().setVisible(true);
-
+                makeGUITree();
             }
-            catch (Exception e){
-                showMessage("Error ");
-                e.printStackTrace();
-            }
-
 		}
     }
 }

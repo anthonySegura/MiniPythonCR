@@ -300,6 +300,7 @@ public class ASTVisitor extends MPGrammarBaseVisitor{
 
         //Se visita sequence de nuevo
         visit(ctx.sequence(1));
+
         subirNivel();
 
         return null;
@@ -481,7 +482,6 @@ public class ASTVisitor extends MPGrammarBaseVisitor{
             visit(ctx.statement(i));
         }
         subirNivel();
-
         return null;
     }
 
