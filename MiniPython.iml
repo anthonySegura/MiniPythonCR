@@ -14,5 +14,7 @@
     <orderEntry type="library" name="languagesupport-2.5.8" level="project" />
     <orderEntry type="library" name="rhino-1.7.7.1" level="project" />
     <orderEntry type="library" name="rsyntaxtextarea-2.5.8" level="project" />
+    <orderEntry type="library" name="antlr-4.7-complete" level="project" />
+    <orderEntry type="library" name="antlr4-runtime-4.7" level="project" />
   </component>
 </module>

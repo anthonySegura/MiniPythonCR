@@ -11,9 +11,11 @@ public class Table {
 
     //Pila de subtablas. Cada tabla es un scope
     private Stack<Scope> scopes;
+    public static final int FUNCION = 100, NULL = -1;
 
     public Table(){
         scopes = new Stack<>();
+        scopes.push(new Scope("Global_Scope"));
     }
 
     /**
@@ -54,4 +56,5 @@ public class Table {
         }
         return id;
     }
+
 }

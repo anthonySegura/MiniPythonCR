@@ -75,7 +75,7 @@ MULTILINE_COMMENT : '“' (COMILLAS | . )*? '”' -> skip;
 WS          :  [ \t]+ -> skip;
 
 //Expresiones regulares
-IDENTIFIER  :   CharContenido CharContenido* ;
+IDENTIFIER  :   CharInicial CharContenido* ;
 INTEGER
             :	'0'
         	| '1'..'9' ('0'..'9')*
@@ -99,6 +99,7 @@ CharContenido
 fragment
 CharInicial
    : 'A'..'Z' | 'a'..'z'
+   | '_'
    | '\u00C0'..'\u00D6'
    | '\u00D8'..'\u00F6'
    | '\u00F8'..'\u02FF'

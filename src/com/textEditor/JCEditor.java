@@ -45,6 +45,7 @@ import org.fife.ui.rsyntaxtextarea.TokenMakerFactory;
 import grammar.MPGrammarLexer;
 import grammar.MPGrammarParser;
 import visitors.ASTVisitor;
+import visitors.SemanticVisitor;
 
 /**
 * Classe que cria a interface principal e manipula parte dos eventos
@@ -1294,6 +1295,8 @@ public class JCEditor extends JFrame {
 
             ParseTree tree = parser.program();
 
+            SemanticVisitor checker = new SemanticVisitor();
+            checker.visit(tree);
 
         }
         catch (Exception e){

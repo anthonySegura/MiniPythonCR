@@ -1,4 +1,4 @@
-// Generated from /home/anthony/IdeaProjects/MiniPython2/MPGrammar.g4 by ANTLR 4.6
+// Generated from /home/anthony/IdeaProjects/MiniPython2/MPGrammar.g4 by ANTLR 4.7
 package grammar;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class MPGrammarParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.6", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.7", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -45,7 +45,7 @@ public class MPGrammarParser extends Parser {
 		"'/'", "'//'", "'**'", "'<'", "'>'", "'<='", "'>='", "'=='", "'def'", 
 		"'if'", "'else'", "'while'", "'return'", "'print'", "'len'"
 	};
-	private static final String[] _SYMBOLIC_NAMES = {
+	public static final String[] _SYMBOLIC_NAMES = {
 		null, "PIZQ", "PDER", "CIZQ", "CDER", "DPUNTOS", "COMA", "ASSIGN", "SUMA", 
 		"RESTA", "MUL", "DIV", "DIV_ENT", "POT", "MENOR_QUE", "MAYOR_QUE", "MENOR_QUE_IG", 
 		"MAYOR_QUE_IG", "IGUAL", "DEF", "IF", "ELSE", "WHILE", "RETURN", "PRINT", 
@@ -1948,7 +1948,7 @@ public class MPGrammarParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3%\u00db\4\2\t\2\4"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3%\u00db\4\2\t\2\4"+
 		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
 		"\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
 		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31\t\31"+
@@ -1966,8 +1966,8 @@ public class MPGrammarParser extends Parser {
 		"\32\3\32\3\32\3\32\3\32\3\32\3\32\3\32\3\32\3\32\3\32\3\32\3\32\3\32\3"+
 		"\32\5\32\u00d5\n\32\3\33\3\33\3\33\3\33\3\33\2\2\34\2\4\6\b\n\f\16\20"+
 		"\22\24\26\30\32\34\36 \"$&(*,.\60\62\64\2\5\3\2\20\24\3\2\n\13\3\2\f\r"+
-		"\u00d7\2\66\3\2\2\2\4F\3\2\2\2\6H\3\2\2\2\bS\3\2\2\2\nY\3\2\2\2\f\\\3"+
-		"\2\2\2\16d\3\2\2\2\20i\3\2\2\2\22m\3\2\2\2\24s\3\2\2\2\26x\3\2\2\2\30"+
+		"\2\u00d7\2\66\3\2\2\2\4F\3\2\2\2\6H\3\2\2\2\bS\3\2\2\2\nY\3\2\2\2\f\\"+
+		"\3\2\2\2\16d\3\2\2\2\20i\3\2\2\2\22m\3\2\2\2\24s\3\2\2\2\26x\3\2\2\2\30"+
 		"~\3\2\2\2\32\u0082\3\2\2\2\34\u0089\3\2\2\2\36\u0090\3\2\2\2 \u0093\3"+
 		"\2\2\2\"\u009a\3\2\2\2$\u009d\3\2\2\2&\u00a4\3\2\2\2(\u00a7\3\2\2\2*\u00b0"+
 		"\3\2\2\2,\u00b3\3\2\2\2.\u00bc\3\2\2\2\60\u00c2\3\2\2\2\62\u00d4\3\2\2"+
