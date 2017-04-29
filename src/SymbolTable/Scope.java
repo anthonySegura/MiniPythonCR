@@ -87,6 +87,14 @@ public class Scope {
             this.valor = valor;
         }
 
+        public Object[] getParametros() {
+            return parametros;
+        }
+
+        public int getTipoRetorno() {
+            return tipoRetorno;
+        }
+
         private String parametrosToString(){
             String p = "";
             for(Object obj : parametros){
