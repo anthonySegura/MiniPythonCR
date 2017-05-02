@@ -1296,12 +1296,13 @@ public class JCEditor extends JFrame {
             ParseTree tree = parser.program();
 
             SemanticVisitor checker = new SemanticVisitor();
-            checker.visit(tree);
+
+			checker.visit(tree);
 
         }
         catch (Exception e){
-            showMessage("Error ");
-            e.printStackTrace();
+            //showMessage("Error ");
+            //e.printStackTrace();
         }
     }
 	

@@ -5,6 +5,7 @@ import SymbolTable.Table;
 import grammar.MPGrammarBaseVisitor;
 import grammar.MPGrammarParser;
 import org.antlr.v4.runtime.CommonToken;
+import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.RuleContext;
 import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.tree.TerminalNode;
@@ -129,8 +130,8 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
         tablaSimbolos.abrirScope("Def_Scope_" + ctx.IDENTIFIER().getText());
 
         Object [] params = (Object[]) visit(ctx.argList());
-        Token token = (Token) visit(ctx.sequence());
-        int tipoRetorno = (token == null)? Table.NULL : token.getType();
+        //Token token = (Token) visit(ctx.sequence());
+        int tipoRetorno = (int)visit(ctx.sequence());
 
         tablaSimbolos.scopeActual().imprimirScope();
 
@@ -153,7 +154,19 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
     public Object visitMorearglist(MPGrammarParser.MorearglistContext ctx){
 
         Scope scopeActual = tablaSimbolos.scopeActual();
-        scopeActual.insertar(ctx.IDENTIFIER().getSymbol(), ctx);
+        //Se busca el identificador en la tabla
+        Scope.Identificador identificador = tablaSimbolos.buscar(ctx.IDENTIFIER().getText());
+        if(identificador != null){
+            String nombre = identificador.getNombre();
+            int tipo = identificador.getTipo();
+            ParserRuleContext cntx = identificador.getDecl();
+            scopeActual.insertar(new CommonToken(tipo, nombre), ctx);
+        }
+        else {
+            System.err.println("Error no se encuentra los tipos de los parametros");
+            return null;
+        }
+
         Object [] params = (Object[]) visit(ctx.moreArgs());
         params[0] = ctx.IDENTIFIER().getText();
 
@@ -189,7 +202,17 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
         int i = 1;
         //Se agregan los argumentos al scope de la funcion
         for(TerminalNode node : ctx.IDENTIFIER()){
-            scopeActual.insertar(node.getSymbol(), ctx);
+            Scope.Identificador identificador = tablaSimbolos.buscar(node.getText());
+            if(identificador != null){
+                String nombre = identificador.getNombre();
+                int tipo = identificador.getTipo();
+                ParserRuleContext cntx = identificador.getDecl();
+                scopeActual.insertar(new CommonToken(tipo, nombre), ctx);
+            }
+            else {
+                System.err.println("Error no se encuentra los tipos de los parametros");
+                return null;
+            }
             params[i] = node.getText();
             i++;
         }
@@ -208,8 +231,11 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
     public Object visitIfstat(MPGrammarParser.IfstatContext ctx){
 
         tablaSimbolos.abrirScope("If_Scope");
-
-        visit(ctx.expression());
+        //Se comprueba si la condición es correcta
+        Object cmprsn = visit(ctx.expression());
+        if(cmprsn == null){
+            System.err.println("Condición invalida en IF ");
+        }
         visit(ctx.sequence(0));
         visit(ctx.sequence(1));
 
@@ -359,10 +385,36 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
     @Override
     public Object visitExprsn(MPGrammarParser.ExprsnContext ctx){
 
-        Object exp = visit(ctx.additionExpression());
-        visit(ctx.comparison());
+        Object result = null;
 
-        return exp;
+        Object exp = visit(ctx.additionExpression());
+        Object cmprsn = visit(ctx.comparison());
+
+        //Si existe una comparación
+        if(cmprsn != null){
+            //Se revisa si los tipos son comparables
+            //Solo se pueden comparar int o char
+            if((int)cmprsn == Table.ERROR){
+                return null;
+            }
+
+            if((int)cmprsn != MPGrammarParser.INTEGER && (int)cmprsn != MPGrammarParser.CHAR && (int)exp != MPGrammarParser.INTEGER && (int)exp != MPGrammarParser.CHAR){
+                System.err.println("Error solo se pueden comparar INTEGER y CHAR");
+            }
+            else if((int)cmprsn != (int)exp){
+                System.err.println("Error tipos incompatibles");
+            }
+
+            //Todo esta bien
+            else {
+                result = Table.BOOL;
+            }
+        }
+        else {
+            result = exp;
+        }
+
+        return result;
     }
 
 
@@ -379,16 +431,21 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
         //Se comprueba el tipo de los elementos comparados, si no son iguales no es valido
 
         Object tipo = null;
-
         if(ctx.additionExpression().size() == 1){
-
+            tipo = visit(ctx.additionExpression(0));
+            if(tipo == null) tipo = Table.ERROR;
         }
-
-        for(int i = 0; i < ctx.additionExpression().size(); i++){
-            Token tempN = (Token) visit(ctx.additionExpression(i));
+        else if(ctx.additionExpression().size() > 1){
+            int tipoAnt = (int)visit(ctx.additionExpression(0));
+            for(int i = 0; i < ctx.additionExpression().size(); i++){
+                if(tipoAnt != (int)visit(ctx.additionExpression(i))){
+                    System.err.println("Error tipos compatibles en comparación");
+                    tipo = Table.ERROR;
+                    break;
+                }
+            }
         }
-
-        return null;
+        return tipo;
     }
 
 
@@ -406,9 +463,14 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
         Object addFact = visit(ctx.additionFactor());
 
         if(addFact != null){
+            //Error en la expresion
+            if((int)addFact == Table.ERROR){
+                return null;
+            }
             if((int)mulexp != (int)addFact){
                 System.err.println("Error elementos incompatibles " +
-                        " " + Table._SYMBOLIC_NAMES[(int)mulexp] + " [+ , -] " + Table._SYMBOLIC_NAMES[(int)addFact] );
+                        " " + Table._SYMBOLIC_NAMES[(int)mulexp] + " [+ , -] " + Table._SYMBOLIC_NAMES[(int)addFact] +
+                        " en " + "'" + ctx.getText() + "'");
             }
             else if((int)mulexp != MPGrammarParser.INTEGER && (int) mulexp != MPGrammarParser.STRING && (int)addFact != MPGrammarParser.INTEGER && (int) addFact != MPGrammarParser.STRING){
                 System.err.println("Error tipos de datos invalidos para la suma");
@@ -444,7 +506,7 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
             for(int i = 0; i < ctx.multiplicationExpression().size(); i++){
                 if(tipoAnt != (int)visit(ctx.multiplicationExpression(i))){
                     System.err.println("Error tipos incompatibles");
-                    tipo = tablaSimbolos.ERROR;
+                    tipo = Table.ERROR;
                     break;
                 }
             }
@@ -469,11 +531,16 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
         Object elmnt2 = visit(ctx.multiplicationFactor());
 
         if(elmnt2 != null){
+            //Error en la expresion
+            if((int)elmnt2 == Table.ERROR){
+                return null;
+            }
             if(elmnt1.getType() != (int)elmnt2 ){
                 System.err.println("Error elementos incompatibles en la multiplicacion en línea " + elmnt1.getLine() +
-                        " " + Table._SYMBOLIC_NAMES[elmnt1.getType()] + " [* , /] " + Table._SYMBOLIC_NAMES[(int)elmnt2] );
+                        " " + Table._SYMBOLIC_NAMES[elmnt1.getType()] + " [* , /] " + Table._SYMBOLIC_NAMES[(int)elmnt2] +
+                        " en " + "'" + ctx.getText() + "'");
             }
-            else if(elmnt1.getType() != MPGrammarParser.INTEGER || (int)elmnt2 != MPGrammarParser.INTEGER){
+            else if(elmnt1.getType() != MPGrammarParser.INTEGER && (int)elmnt2 != MPGrammarParser.INTEGER){
                 System.err.println("Error tipos de datos invalidos para la multiplicación en línea " + elmnt1.getLine());
             }
             else {
@@ -508,7 +575,7 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
             for(int i = 0; i < ctx.elementExpression().size(); i++) {
                 if(tipoAnt != ((Token)visit(ctx.elementExpression(i))).getType()){
                     System.err.println("Error tipos incompatibles");
-                    tipo = tablaSimbolos.ERROR;
+                    tipo = Table.ERROR;
                     break;
                 }
             }

@@ -75,6 +75,13 @@ public class Scope {
             this.tipo = tipo;
         }
 
+        public ParserRuleContext getDecl() {
+            return decl;
+        }
+
+        public void setDecl(ParserRuleContext decl) {
+            this.decl = decl;
+        }
 
         public Object[] getParametros() {
             return parametros;
@@ -89,8 +96,10 @@ public class Scope {
         }
 
         public void mostrarInformacion(){
-            if(!esFuncion)
-                System.out.println("\t" + getNombre() + " | " + Table._SYMBOLIC_NAMES[getTipo()]);
+            if(!esFuncion) {
+                String tipo = (getTipo() == Table.BOOL)? "Boolean" : Table._SYMBOLIC_NAMES[getTipo()];
+                System.out.println("\t" + getNombre() + " | " + tipo);
+            }
             else {
                 String tipoRet = (getTipo() == Table.NULL)? "None" : Table._SYMBOLIC_NAMES[getTipo()];
                 System.out.println("\t" + getNombre() + " | " + "Funcion" + " | " + tipoRet + " | " + parametrosToString());
