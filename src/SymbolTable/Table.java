@@ -11,7 +11,16 @@ public class Table {
 
     //Pila de subtablas. Cada tabla es un scope
     private Stack<Scope> scopes;
-    public static final int FUNCION = 100, NULL = -1;
+    //Tipos de datos adicionales
+    public static final int FUNCION = 100, NULL = -1, BOOL = 300, ERROR = 200;
+    //Nombre de los tokens
+    public static final String[] _SYMBOLIC_NAMES = {
+            null, "PIZQ", "PDER", "CIZQ", "CDER", "DPUNTOS", "COMA", "ASSIGN", "SUMA",
+            "RESTA", "MUL", "DIV", "DIV_ENT", "POT", "MENOR_QUE", "MAYOR_QUE", "MENOR_QUE_IG",
+            "MAYOR_QUE_IG", "IGUAL", "DEF", "IF", "ELSE", "WHILE", "RETURN", "PRINT",
+            "LEN", "COMMENT", "MULTILINE_COMMENT", "WS", "IDENTIFIER", "INTEGER",
+            "STRING", "CHAR", "NEWLINE", "INDENT", "DEDENT"
+    };
 
     public Table(){
         scopes = new Stack<>();

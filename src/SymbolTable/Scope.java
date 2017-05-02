@@ -24,11 +24,9 @@ public class Scope {
 
         private String nombre;
         private int tipo;
-        private Object valor;
         private ParserRuleContext decl;
         //Atributos para las funciones
         private Object [] parametros;
-        private int tipoRetorno;
         private boolean esFuncion;
 
         /**
@@ -37,11 +35,10 @@ public class Scope {
          * @param context
          * @param valor
          */
-        public Identificador(Token token, ParserRuleContext context, Object valor) {
+        public Identificador(Token token, ParserRuleContext context) {
             this.nombre = token.getText();
             this.tipo = token.getType();
             this.decl = context;
-            this.valor = valor;
             this.esFuncion = false;
         }
 
@@ -53,14 +50,13 @@ public class Scope {
          * @param parametros
          * @param tipoRetorno
          */
-        public Identificador(Token token, ParserRuleContext context, Object valor, Object [] parametros, int tipoRetorno) {
+        public Identificador(Token token, ParserRuleContext context, Object [] parametros, int tipoRetorno) {
             this.nombre = token.getText();
-            this.tipo = Table.FUNCION;
+            this.tipo = tipoRetorno;
             this.decl = context;
-            this.valor = valor;
             this.esFuncion = true;
             this.parametros = parametros;
-            this.tipoRetorno = tipoRetorno;
+
         }
 
         public String getNombre() {
@@ -79,20 +75,9 @@ public class Scope {
             this.tipo = tipo;
         }
 
-        public Object getValor() {
-            return valor;
-        }
-
-        public void setValor(Object valor) {
-            this.valor = valor;
-        }
 
         public Object[] getParametros() {
             return parametros;
-        }
-
-        public int getTipoRetorno() {
-            return tipoRetorno;
         }
 
         private String parametrosToString(){
@@ -105,9 +90,9 @@ public class Scope {
 
         public void mostrarInformacion(){
             if(!esFuncion)
-                System.out.println("\t" + getNombre() + " | " + MPGrammarParser._SYMBOLIC_NAMES[getTipo()] + " | " + getValor());
+                System.out.println("\t" + getNombre() + " | " + Table._SYMBOLIC_NAMES[getTipo()]);
             else {
-                String tipoRet = (tipoRetorno == Table.NULL)? "None" : MPGrammarParser._SYMBOLIC_NAMES[tipoRetorno];
+                String tipoRet = (getTipo() == Table.NULL)? "None" : Table._SYMBOLIC_NAMES[getTipo()];
                 System.out.println("\t" + getNombre() + " | " + "Funcion" + " | " + tipoRet + " | " + parametrosToString());
             }
         }
@@ -118,21 +103,29 @@ public class Scope {
         this.nombre = nombre;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
     /**
      * Agrega un nuevo identificador al scope actual
      * @param nombre
      * @param tipo
      * @param ctx
      */
-    public void insertar(Token token, ParserRuleContext ctx, Object valor){
+    public void insertar(Token token, ParserRuleContext ctx){
 
-        Identificador id = new Identificador(token, ctx , valor);
+        Identificador id = new Identificador(token, ctx);
 
         registros.add(id);
     }
 
-    public void insertarFuncion(Token token, ParserRuleContext context, Object valor, Object [] parametros, int tipoRetorno){
-        Identificador id = new Identificador(token, context, valor, parametros, tipoRetorno);
+    public void insertarFuncion(Token token, ParserRuleContext context, Object [] parametros, int tipoRetorno){
+        Identificador id = new Identificador(token, context, parametros, tipoRetorno);
 
         registros.add(id);
     }

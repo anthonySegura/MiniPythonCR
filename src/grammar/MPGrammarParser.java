@@ -45,7 +45,7 @@ public class MPGrammarParser extends Parser {
 		"'/'", "'//'", "'**'", "'<'", "'>'", "'<='", "'>='", "'=='", "'def'", 
 		"'if'", "'else'", "'while'", "'return'", "'print'", "'len'"
 	};
-	public static final String[] _SYMBOLIC_NAMES = {
+	private static final String[] _SYMBOLIC_NAMES = {
 		null, "PIZQ", "PDER", "CIZQ", "CDER", "DPUNTOS", "COMA", "ASSIGN", "SUMA", 
 		"RESTA", "MUL", "DIV", "DIV_ENT", "POT", "MENOR_QUE", "MAYOR_QUE", "MENOR_QUE_IG", 
 		"MAYOR_QUE_IG", "IGUAL", "DEF", "IF", "ELSE", "WHILE", "RETURN", "PRINT", 
