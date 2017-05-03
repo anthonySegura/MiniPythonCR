@@ -119,6 +119,24 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
 
 
     /**
+     * Obtiene el tipo de dato por cada parametro de la funcion
+     * @param parametros
+     * @return
+     */
+    private int [] getTipoParametros(Object [] parametros){
+        int [] tipos = new int [parametros.length];
+
+        //Se buscan los parametros en el scope de la funcion, en el momento en que se llama este metodo solo se
+        //encuentran los parametros en la tabla de este scope
+        for(int i = 0; i < parametros.length; i++){
+            Scope.Identificador id = tablaSimbolos.scopeActual().buscar(parametros[i].toString());
+            tipos[i] = id.getTipo();
+        }
+
+        return tipos;
+    }
+
+    /**
      * Visit a parse tree produced by the {@code defstat}
      * labeled alternative in {@link MPGrammarParser#defStatement}.
      * @param ctx the parse tree
@@ -128,8 +146,11 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
     public Object visitDefstat(MPGrammarParser.DefstatContext ctx){
 
         tablaSimbolos.abrirScope("Def_Scope_" + ctx.IDENTIFIER().getText());
-
+        //Busca los parametros de la funcion y revisa que esten declarados de manera global
         Object [] params = (Object[]) visit(ctx.argList());
+        //Busca el tipo de dato por cada parametro
+        int [] tiposParams = getTipoParametros(params);
+        //Busca el tipo de retorno de la funcion
         Object ret = visit(ctx.sequence());
         int tipoRetorno = (ret == null) ? Table.NULL : (int)ret;
 
@@ -138,7 +159,7 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
         tablaSimbolos.cerrarScope();
 
         //Se agrega la funcion al scope actual
-        tablaSimbolos.scopeActual().insertarFuncion(ctx.IDENTIFIER().getSymbol(), ctx, params, tipoRetorno);
+        tablaSimbolos.scopeActual().insertarFuncion(ctx.IDENTIFIER().getSymbol(), ctx, params, tiposParams, tipoRetorno);
 
         return null;
     }
@@ -292,6 +313,11 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
     @Override
     public Object visitPrintstat(MPGrammarParser.PrintstatContext ctx){
 
+        Object exprsn = visit(ctx.expression());
+        if(exprsn == null){
+            System.err.println("Error en el print");
+        }
+
         return null;
     }
 
@@ -328,7 +354,7 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
     }
 
 
-    /**
+    /**Esta regla aplica para llamadas simples de funciones como funcion()
      * Visit a parse tree produced by the {@code fncallstat}
      * labeled alternative in {@link MPGrammarParser#functionCallStatement}.
      * @param ctx the parse tree
@@ -768,9 +794,7 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
     @Override
     public Object visitPrimlistexp(MPGrammarParser.PrimlistexpContext ctx){
 
-        visit(ctx.listExpression());
-
-        return null;
+        return visit(ctx.listExpression());
     }
 
 
@@ -783,9 +807,18 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
     @Override
     public Object visitLenexp(MPGrammarParser.LenexpContext ctx){
 
-        visit(ctx.expression());
+        Token result = null;
 
-        return null;
+        int lista = (int) visit(ctx.expression());
+
+        if(lista != Table.LISTA && lista != MPGrammarParser.STRING){
+            System.err.println("Error len solo se puede aplicar a una lista " + ctx.getText());
+        }
+        else{
+            result = new CommonToken(MPGrammarParser.INTEGER, "len");
+        }
+
+        return result;
     }
 
 
@@ -814,7 +847,8 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
 
         visit(ctx.expressionList());
 
-        return null;
+        Token token = new CommonToken(Table.LISTA, "[]");
+        return token;
     }
 
 }

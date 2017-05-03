@@ -27,6 +27,7 @@ public class Scope {
         private ParserRuleContext decl;
         //Atributos para las funciones
         private Object [] parametros;
+        private int [] tipoParametros;  //Codigo del tipo de dato de cada parametro
         private boolean esFuncion;
 
         /**
@@ -50,13 +51,13 @@ public class Scope {
          * @param parametros
          * @param tipoRetorno
          */
-        public Identificador(Token token, ParserRuleContext context, Object [] parametros, int tipoRetorno) {
+        public Identificador(Token token, ParserRuleContext context, Object [] parametros,int [] tipoParametros, int tipoRetorno) {
             this.nombre = token.getText();
             this.tipo = tipoRetorno;
             this.decl = context;
             this.esFuncion = true;
             this.parametros = parametros;
-
+            this.tipoParametros = tipoParametros;
         }
 
         public String getNombre() {
@@ -75,7 +76,16 @@ public class Scope {
             this.tipo = tipo;
         }
 
+        public int[] getTipoParametros() {
+            return tipoParametros;
+        }
+
+        public void setTipoParametros(int[] tipoParametros) {
+            this.tipoParametros = tipoParametros;
+        }
+
         public ParserRuleContext getDecl() {
+
             return decl;
         }
 
@@ -95,6 +105,16 @@ public class Scope {
             return p;
         }
 
+        private String tiposParamsToString(){
+            String p = "";
+
+            for(int tp : tipoParametros){
+                p += Table._SYMBOLIC_NAMES[tp] + ",";
+            }
+
+            return p;
+        }
+
         public void mostrarInformacion(){
             if(!esFuncion) {
                 String tipo = (getTipo() == Table.BOOL)? "Boolean" : Table._SYMBOLIC_NAMES[getTipo()];
@@ -102,7 +122,8 @@ public class Scope {
             }
             else {
                 String tipoRet = (getTipo() == Table.NULL)? "None" : Table._SYMBOLIC_NAMES[getTipo()];
-                System.out.println("\t" + getNombre() + " | " + "Funcion" + " | " + tipoRet + " | " + parametrosToString());
+                System.out.println("\t" + getNombre() + " | " + "Funcion" + " | " + tipoRet + " | " + parametrosToString() +
+                        " | " + tiposParamsToString());
             }
         }
     }
@@ -133,8 +154,8 @@ public class Scope {
         registros.add(id);
     }
 
-    public void insertarFuncion(Token token, ParserRuleContext context, Object [] parametros, int tipoRetorno){
-        Identificador id = new Identificador(token, context, parametros, tipoRetorno);
+    public void insertarFuncion(Token token, ParserRuleContext context, Object [] parametros,int [] tipoParametros, int tipoRetorno){
+        Identificador id = new Identificador(token, context, parametros,tipoParametros,tipoRetorno);
 
         registros.add(id);
     }
