@@ -130,8 +130,8 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
         tablaSimbolos.abrirScope("Def_Scope_" + ctx.IDENTIFIER().getText());
 
         Object [] params = (Object[]) visit(ctx.argList());
-        //Token token = (Token) visit(ctx.sequence());
-        int tipoRetorno = (int)visit(ctx.sequence());
+        Object ret = visit(ctx.sequence());
+        int tipoRetorno = (ret == null) ? Table.NULL : (int)ret;
 
         tablaSimbolos.scopeActual().imprimirScope();
 

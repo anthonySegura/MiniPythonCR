@@ -12,7 +12,7 @@ public class Table {
     //Pila de subtablas. Cada tabla es un scope
     private Stack<Scope> scopes;
     //Tipos de datos adicionales
-    public static final int FUNCION = 100, NULL = -1, BOOL = 300, ERROR = 200;
+    public static final int FUNCION = 100, NULL = -1, BOOL = 300, ERROR = 200, LISTA = 400;
     //Nombre de los tokens
     public static final String[] _SYMBOLIC_NAMES = {
             null, "PIZQ", "PDER", "CIZQ", "CDER", "DPUNTOS", "COMA", "ASSIGN", "SUMA",

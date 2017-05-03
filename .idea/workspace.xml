@@ -2,22 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef7a0d16-c1e0-4978-afaf-52ddf6e969bd" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/SymbolTable/Scope$Identificador.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/SymbolTable/Scope$Identificador.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/SymbolTable/Scope.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/SymbolTable/Scope.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/com/textEditor/JCEditor$DesfazerListener.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/com/textEditor/JCEditor$DesfazerListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/com/textEditor/JCEditor$DobrarCodigoListener.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/com/textEditor/JCEditor$DobrarCodigoListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/com/textEditor/JCEditor$FecharAbaListener.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/com/textEditor/JCEditor$FecharAbaListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/com/textEditor/JCEditor$ImprimirPotigolListener.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/com/textEditor/JCEditor$ImprimirPotigolListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/com/textEditor/JCEditor$QuebrarLinhaListener.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/com/textEditor/JCEditor$QuebrarLinhaListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/com/textEditor/JCEditor$RefazerListener.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/com/textEditor/JCEditor$RefazerListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/com/textEditor/JCEditor$SelecionarTudoListener.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/com/textEditor/JCEditor$SelecionarTudoListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/com/textEditor/JCEditor$SobrePotigolListener.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/com/textEditor/JCEditor$SobrePotigolListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/com/textEditor/JCEditor$showASTListener.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/com/textEditor/JCEditor$showASTListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/com/textEditor/JCEditor.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/com/textEditor/JCEditor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/SymbolTable/Table.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/SymbolTable/Table.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/visitors/SemanticVisitor.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/visitors/SemanticVisitor.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SymbolTable/Scope.java" afterPath="$PROJECT_DIR$/src/SymbolTable/Scope.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/textEditor/JCEditor.java" afterPath="$PROJECT_DIR$/src/com/textEditor/JCEditor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SymbolTable/Table.java" afterPath="$PROJECT_DIR$/src/SymbolTable/Table.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/visitors/SemanticVisitor.java" afterPath="$PROJECT_DIR$/src/visitors/SemanticVisitor.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -29,7 +17,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/MiniPython2$Main.coverage" NAME="Main Coverage Results" MODIFIED="1493697734935" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/MiniPython2$Main.coverage" NAME="Main Coverage Results" MODIFIED="1493782346286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -48,19 +36,17 @@
     <favorites_list name="MiniPython2" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5682853">
+    <splitter split-orientation="horizontal" split-proportion="0.54097116">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="Scope.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/SymbolTable/Scope.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="144">
-                  <caret line="77" column="44" lean-forward="false" selection-start-line="77" selection-start-column="44" selection-end-line="77" selection-end-column="44" />
+                <state relative-caret-position="1071">
+                  <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#1987#1988#0" expanded="true" />
-                    <element signature="e#2042#2043#0" expanded="true" />
-                    <element signature="e#2082#2083#0" expanded="true" />
+                    <marker date="1493694282000" expanded="true" signature="2615:2902" ph="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -69,8 +55,8 @@
           <file leaf-file-name="Table.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/SymbolTable/Table.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="119">
-                  <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+                <state relative-caret-position="238">
+                  <caret line="14" column="90" lean-forward="false" selection-start-line="14" selection-start-column="90" selection-end-line="14" selection-end-column="90" />
                   <folding />
                 </state>
               </provider>
@@ -79,8 +65,8 @@
           <file leaf-file-name="JCEditor.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/textEditor/JCEditor.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="1300" column="0" lean-forward="true" selection-start-line="1300" selection-start-column="0" selection-end-line="1300" selection-end-column="0" />
+                <state relative-caret-position="20689">
+                  <caret line="1300" column="0" lean-forward="false" selection-start-line="1300" selection-start-column="0" selection-end-line="1300" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -89,8 +75,8 @@
           <file leaf-file-name="SemanticVisitor.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/visitors/SemanticVisitor.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="84">
-                  <caret line="133" column="30" lean-forward="false" selection-start-line="133" selection-start-column="30" selection-end-line="133" selection-end-column="30" />
+                <state relative-caret-position="-136">
+                  <caret line="143" column="5" lean-forward="false" selection-start-line="143" selection-start-column="5" selection-end-line="143" selection-end-column="5" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -101,7 +87,7 @@
           <file leaf-file-name="MPGrammarParser.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/grammar/MPGrammarParser.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="147">
+                <state relative-caret-position="17187">
                   <caret line="1156" column="0" lean-forward="false" selection-start-line="1156" selection-start-column="0" selection-end-line="1156" selection-end-column="0" />
                   <folding />
                 </state>
@@ -111,12 +97,12 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="SemanticVisitor.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/visitors/SemanticVisitor.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1287">
-                  <caret line="528" column="21" lean-forward="false" selection-start-line="528" selection-start-column="15" selection-end-line="528" selection-end-column="21" />
+                <state relative-caret-position="8840">
+                  <caret line="528" column="21" lean-forward="false" selection-start-line="528" selection-start-column="21" selection-end-line="528" selection-end-column="21" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -127,8 +113,8 @@
           <file leaf-file-name="MPGrammar.g4" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/MPGrammar.g4">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="84">
-                  <caret line="140" column="69" lean-forward="false" selection-start-line="140" selection-start-column="61" selection-end-line="140" selection-end-column="69" />
+                <state relative-caret-position="17">
+                  <caret line="148" column="53" lean-forward="false" selection-start-line="148" selection-start-column="45" selection-end-line="148" selection-end-column="53" />
                   <folding>
                     <element signature="e#41#66#1" expanded="true" />
                     <element signature="e#68#132#1" expanded="true" />
@@ -141,11 +127,9 @@
           <file leaf-file-name="ASTVisitor.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/visitors/ASTVisitor.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="147">
+                <state relative-caret-position="10727">
                   <caret line="640" column="0" lean-forward="false" selection-start-line="640" selection-start-column="0" selection-end-line="640" selection-end-column="0" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -163,7 +147,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>nimbus</find>
       <find>visit</find>
       <find>run</find>
       <find>mismatched</find>
@@ -193,6 +176,7 @@
       <find>compilar</find>
       <find>runListener</find>
       <find>ERROR</find>
+      <find>buscar</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -232,11 +216,11 @@
         <option value="$PROJECT_DIR$/src/com/textEditor/AstGUI.java" />
         <option value="$PROJECT_DIR$/antlr4-runtime-4.6.jar!/org/antlr/v4/runtime/Token.class" />
         <option value="$PROJECT_DIR$/src/grammar/MPGrammarLexer.java" />
-        <option value="$PROJECT_DIR$/MPGrammar.g4" />
         <option value="$PROJECT_DIR$/src/grammar/MPGrammarParser.java" />
-        <option value="$PROJECT_DIR$/src/SymbolTable/Table.java" />
         <option value="$PROJECT_DIR$/src/com/textEditor/JCEditor.java" />
         <option value="$PROJECT_DIR$/src/SymbolTable/Scope.java" />
+        <option value="$PROJECT_DIR$/src/SymbolTable/Table.java" />
+        <option value="$PROJECT_DIR$/MPGrammar.g4" />
         <option value="$PROJECT_DIR$/src/visitors/SemanticVisitor.java" />
       </list>
     </option>
@@ -258,7 +242,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -271,57 +255,7 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MiniPython2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MiniPython2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MiniPython2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MiniPython2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MiniPython2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MiniPython2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="visitors" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -799,12 +733,17 @@
       <workItem from="1493586295991" duration="233000" />
       <workItem from="1493586597539" duration="13449000" />
       <workItem from="1493662809509" duration="12428000" />
-      <workItem from="1493675513193" duration="20262000" />
+      <workItem from="1493675513193" duration="21206000" />
+      <workItem from="1493699235986" duration="605000" />
+      <workItem from="1493770513640" duration="9675000" />
+      <workItem from="1493786592650" duration="600000" />
+      <workItem from="1493843854705" duration="256000" />
+      <workItem from="1493844205994" duration="661000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160300000" />
+    <option name="totallyTimeSpent" value="173041000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -816,7 +755,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1366" height="768" extended-state="6" />
+    <frame x="0" y="0" width="1366" height="768" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -837,10 +777,9 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19323671" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32852808" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19967794" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22382398" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -849,11 +788,38 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32852808" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -1156,63 +1122,48 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="67">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="e#347#348#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/visitors/ASTVisitor.java">
+    <entry file="file://$PROJECT_DIR$/src/com/textEditor/JCEditor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="640" column="0" lean-forward="false" selection-start-line="640" selection-start-column="0" selection-end-line="640" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SymbolTable/Table.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+        <state relative-caret-position="20689">
+          <caret line="1300" column="0" lean-forward="false" selection-start-line="1300" selection-start-column="0" selection-end-line="1300" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/grammar/MPGrammarParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
+        <state relative-caret-position="17187">
           <caret line="1156" column="0" lean-forward="false" selection-start-line="1156" selection-start-column="0" selection-end-line="1156" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/textEditor/JCEditor.java">
+    <entry file="file://$PROJECT_DIR$/src/visitors/ASTVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="1300" column="0" lean-forward="true" selection-start-line="1300" selection-start-column="0" selection-end-line="1300" selection-end-column="0" />
+        <state relative-caret-position="10727">
+          <caret line="640" column="0" lean-forward="false" selection-start-line="640" selection-start-column="0" selection-end-line="640" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SymbolTable/Scope.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="77" column="44" lean-forward="false" selection-start-line="77" selection-start-column="44" selection-end-line="77" selection-end-column="44" />
+        <state relative-caret-position="1071">
+          <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1987#1988#0" expanded="true" />
-            <element signature="e#2042#2043#0" expanded="true" />
-            <element signature="e#2082#2083#0" expanded="true" />
+            <marker date="1493694282000" expanded="true" signature="2615:2902" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MPGrammar.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="140" column="69" lean-forward="false" selection-start-line="140" selection-start-column="61" selection-end-line="140" selection-end-column="69" />
+        <state relative-caret-position="17">
+          <caret line="148" column="53" lean-forward="false" selection-start-line="148" selection-start-column="45" selection-end-line="148" selection-end-column="53" />
           <folding>
             <element signature="e#41#66#1" expanded="true" />
             <element signature="e#68#132#1" expanded="true" />
@@ -1221,10 +1172,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/SymbolTable/Table.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="90" lean-forward="false" selection-start-line="14" selection-start-column="90" selection-end-line="14" selection-end-column="90" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/visitors/SemanticVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="133" column="30" lean-forward="false" selection-start-line="133" selection-start-column="30" selection-end-line="133" selection-end-column="30" />
+        <state relative-caret-position="8840">
+          <caret line="528" column="21" lean-forward="false" selection-start-line="528" selection-start-column="21" selection-end-line="528" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
