@@ -6,7 +6,6 @@ import grammar.MPGrammarBaseVisitor;
 import grammar.MPGrammarParser;
 import org.antlr.v4.runtime.CommonToken;
 import org.antlr.v4.runtime.ParserRuleContext;
-import org.antlr.v4.runtime.RuleContext;
 import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
@@ -332,8 +331,8 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
     public Object visitAssignstat(MPGrammarParser.AssignstatContext ctx){
 
         //ID = expression
-
         Object tipo = visit(ctx.expression());
+
         if(tipo != null) {
 
             String id = ctx.IDENTIFIER().getText();
@@ -353,6 +352,25 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
         return null;
     }
 
+    private boolean compareArgs(int [] funcArgs, Object[] callArgs){
+        boolean iguales = true;
+
+        if(funcArgs.length != callArgs.length){
+            System.err.println("Numero invalido de parametros, Se esperaban : " + funcArgs.length +
+                    " Recibidos : " + callArgs.length);
+            return false;
+        }
+
+        for(int i = 0; i < funcArgs.length; i++){
+            if(funcArgs[i] != (int)callArgs[i]){
+                iguales = false;
+                System.err.println("Tipo de parametro invalido, Se esperaba : " +
+                        Table._SYMBOLIC_NAMES[funcArgs[i]] + " Recibido : " + Table._SYMBOLIC_NAMES[(int)callArgs[i]]);
+            }
+        }
+
+        return iguales;
+    }
 
     /**Esta regla aplica para llamadas simples de funciones como funcion()
      * Visit a parse tree produced by the {@code fncallstat}
@@ -363,9 +381,19 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
     @Override
     public Object visitFncallstat(MPGrammarParser.FncallstatContext ctx){
 
-        visit(ctx.primitiveExpression());
-
-        visit(ctx.expressionList());
+        //Busca el identificador de la funcion y verifica si esta declarada
+        Object token = visit(ctx.primitiveExpression());
+        if(token != null){
+            //identificador de la funcion
+            token = (Token)token;
+            Scope.Identificador funcion = tablaSimbolos.buscar(((Token) token).getText());
+            int [] params = funcion.getTipoParametros();
+            Object[] args = (Object[])visit(ctx.expressionList());
+            if(!compareArgs(params, args)){
+                System.err.println("Parametros invalidos en la llamada a la funcion " + ctx.getText() +
+                     " Línea " + ctx.PDER().getSymbol().getLine());
+            }
+        }
 
         return null;
     }
@@ -652,13 +680,32 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
      */
     public Object visitFncallexp(MPGrammarParser.FncallexpContext ctx){
 
-        visit(ctx.expressionList());
+        //Retorna el tipo de dato que devuelve la funcion
+        Object funcType = null;
+        //Primero se verifica que la funcion esta declarada
+        Scope.Identificador funcion = tablaSimbolos.buscar(ctx.IDENTIFIER().getText());
+        if(funcion != null){
+            int [] params = funcion.getTipoParametros();
+            Object [] args = (Object[])visit(ctx.expressionList());
+            if(!compareArgs(params, args)){
+                System.err.println("Parametros invalidos en la llamada a la funcion " + ctx.getText() +
+                        " Línea " + ctx.PDER().getSymbol().getLine());
+            }
+            else {
+                funcType = new CommonToken(funcion.getTipo(), ctx.IDENTIFIER().getText());
+            }
+        }
+        else {
+            System.err.println("La funcion " + ctx.IDENTIFIER().getText() + " no esta declarada " +
+                "Línea " + ctx.IDENTIFIER().getSymbol().getLine());
+        }
 
-        return null;
+
+        return funcType;
     }
 
 
-    /**
+    /**Obtiene los parametros de las llamadas a funcion
      * Visit a parse tree produced by the {@code moreexplist}
      * labeled alternative in {@link MPGrammarParser#expressionList}.
      * @param ctx the parse tree
@@ -667,10 +714,11 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
     @Override
     public Object visitMoreexplist(MPGrammarParser.MoreexplistContext ctx){
 
-        visit(ctx.expression());
-        visit(ctx.moreExpressions());
+        Object elmnt1 = visit(ctx.expression());
+        Object [] elmnts = (Object[]) visit(ctx.moreExpressions());
+        elmnts[0] = elmnt1;
 
-        return null;
+        return elmnts;
     }
 
 
@@ -683,7 +731,9 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
     @Override
     public Object visitEpsexplist(MPGrammarParser.EpsexplistContext ctx){
 
-        return null;
+        Object [] elmnts = new Object[0];
+
+        return elmnts;
     }
 
 
@@ -696,11 +746,15 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
     @Override
     public Object visitMoreexps(MPGrammarParser.MoreexpsContext ctx){
 
+        Object [] elmnts = new Object[ctx.expression().size() + 1];
+        int index = 1;
+
         for(int i = 0; i < ctx.expression().size(); i++){
-            visit(ctx.expression(i));
+            elmnts[index] = visit(ctx.expression(i));
+            index++;
         }
 
-        return null;
+        return elmnts;
     }
 
 
@@ -779,9 +833,10 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
     @Override
     public Object visitPizqexp(MPGrammarParser.PizqexpContext ctx){
 
-        visit(ctx.expression());
+        int resultado = (int)visit(ctx.expression());
+        Token token = new CommonToken(resultado, "()");
 
-        return null;
+        return token;
     }
 
 
@@ -831,9 +886,8 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
     @Override
     public Object visitPrimfncallexp(MPGrammarParser.PrimfncallexpContext ctx){
 
-        visit(ctx.functionCallExpression());
+        return visit(ctx.functionCallExpression());
 
-        return null;
     }
 
 
