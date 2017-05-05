@@ -2,12 +2,15 @@ package visitors;
 
 import SymbolTable.Scope;
 import SymbolTable.Table;
+import SymbolTable.TokenCR;
 import grammar.MPGrammarBaseVisitor;
 import grammar.MPGrammarParser;
 import org.antlr.v4.runtime.CommonToken;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.tree.TerminalNode;
+
+import static SymbolTable.Scope.*;
 
 /**
  * Created by anthony on 22/04/17.
@@ -582,6 +585,7 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
 
         Object result = null;
         Token elmnt1 = (Token) visit(ctx.elementExpression());
+
         Object elmnt2 = visit(ctx.multiplicationFactor());
 
         if(elmnt2 != null){
@@ -761,7 +765,7 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
     /**
      * Visit a parse tree produced by the {@code intexp}
      * labeled alternative in {@link MPGrammarParser#primitiveExpression}.
-     * @param ctx the parse tree
+     * @param ctx the parse treedd
      * @return the visitor result
      */
     @Override
@@ -848,7 +852,7 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
      */
     @Override
     public Object visitPrimlistexp(MPGrammarParser.PrimlistexpContext ctx){
-
+        System.out.println(visit(ctx.listExpression()).getClass());
         return visit(ctx.listExpression());
     }
 
@@ -899,9 +903,11 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
     @Override
     public Object visitListExpression(MPGrammarParser.ListExpressionContext ctx){
 
-        visit(ctx.expressionList());
+        int [] exprsnLst = (int[]) visit(ctx.expressionList());
+        Scope scopeActual = tablaSimbolos.scopeActual();
 
-        Token token = new CommonToken(Table.LISTA, "[]");
+        Token token = new TokenCR(Table.LISTA, "Lista", exprsnLst);
+
         return token;
     }
 

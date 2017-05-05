@@ -29,6 +29,11 @@ public class Scope {
         private Object [] parametros;
         private int [] tipoParametros;  //Codigo del tipo de dato de cada parametro
         private boolean esFuncion;
+        //Atributos para las listas
+        private boolean esLista;
+        private Object [] lista;
+        private int [] tipoLista;
+
 
         /**
          * Constructor para las variables y parametros
@@ -60,6 +65,21 @@ public class Scope {
             this.tipoParametros = tipoParametros;
         }
 
+        /**Constructor para las listas
+         * Constructor para los parametros
+         * @param token
+         * @param context
+         * @param lista
+         * @param tipoLista
+         */
+        public Identificador(Token token, ParserRuleContext context, int [] tipoLista) {
+            this.nombre = token.getText();
+            this.decl = context;
+            this.esFuncion = false;
+            this.tipoLista= tipoLista;
+            this.esLista = true;
+        }
+
         public String getNombre() {
             return nombre;
         }
@@ -80,8 +100,36 @@ public class Scope {
             return tipoParametros;
         }
 
+        public boolean isEsLista() {
+            return esLista;
+        }
+
+        public void setEsLista(boolean esLista) {
+            this.esLista = esLista;
+        }
+
+        public Object[] getLista() {
+            return lista;
+        }
+
+        public void setLista(Object[] lista) {
+            this.lista = lista;
+        }
+
+        public int[] getTipoLista() {
+            return tipoLista;
+        }
+
+        public void setTipoLista(int[] tipoLista) {
+            this.tipoLista = tipoLista;
+        }
+
         public void setTipoParametros(int[] tipoParametros) {
             this.tipoParametros = tipoParametros;
+        }
+
+        public void setParametros(Object[] parametros) {
+            this.parametros = parametros;
         }
 
         public ParserRuleContext getDecl() {
@@ -115,15 +163,28 @@ public class Scope {
             return p;
         }
 
-        public void mostrarInformacion(){
-            if(!esFuncion) {
-                String tipo = (getTipo() == Table.BOOL)? "Boolean" : Table._SYMBOLIC_NAMES[getTipo()];
-                System.out.println("\t" + getNombre() + " | " + tipo);
+        private String listaToString(){
+            String p = "";
+
+            for(Object tp : lista){
+                p += tp.toString() + ",";
             }
-            else {
+
+            return p;
+        }
+
+        public void mostrarInformacion(){
+            if(esFuncion) {
                 String tipoRet = (getTipo() == Table.NULL)? "None" : Table._SYMBOLIC_NAMES[getTipo()];
                 System.out.println("\t" + getNombre() + " | " + "Funcion" + " | " + tipoRet + " | " + parametrosToString() +
                         " | " + tiposParamsToString());
+            }
+            else if(esLista) {
+                System.out.println("\t" + getNombre() + " | " + "Lista " + " | " + listaToString());
+            }
+            else {
+                String tipo = (getTipo() == Table.BOOL)? "Boolean" : Table._SYMBOLIC_NAMES[getTipo()];
+                System.out.println("\t" + getNombre() + " | " + tipo);
             }
         }
     }
@@ -156,6 +217,13 @@ public class Scope {
 
     public void insertarFuncion(Token token, ParserRuleContext context, Object [] parametros,int [] tipoParametros, int tipoRetorno){
         Identificador id = new Identificador(token, context, parametros,tipoParametros,tipoRetorno);
+
+        registros.add(id);
+    }
+
+
+    public void insertarLista(Token token, ParserRuleContext context, int [] tipos){
+        Identificador id = new Identificador(token, context, tipos);
 
         registros.add(id);
     }
