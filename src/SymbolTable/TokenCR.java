@@ -9,7 +9,8 @@ import org.antlr.v4.runtime.Token;
 public class TokenCR extends CommonToken{
 
     //Atributos para las listas
-    private int [] tipoParametros;
+    private Object [] tipoParametros;
+    private String nombre;
     private boolean esLista;
 
     public TokenCR(int type, String text) {
@@ -22,14 +23,28 @@ public class TokenCR extends CommonToken{
      * @param text
      * @param token
      */
-    public TokenCR(int type, String text, int [] lista) {
+    public TokenCR(int type, String text, Object [] lista) {
         super(type, text);
         this.esLista = true;
         this.tipoParametros = lista;
     }
 
+    public Object [] getLista(){
+        return this.tipoParametros;
+    }
+
+    public void setNombre(String nombre){
+        this.nombre = nombre;
+    }
+
     public String getNombre(){
-        return super.getText();
+        if(nombre == null){
+            return super.getText();
+        }
+        else{
+            return this.nombre;
+        }
+
     }
 
     public int getTipo(){

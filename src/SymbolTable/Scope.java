@@ -22,6 +22,7 @@ public class Scope {
      */
     public class Identificador {
 
+        private Token token;
         private String nombre;
         private int tipo;
         private ParserRuleContext decl;
@@ -32,7 +33,7 @@ public class Scope {
         //Atributos para las listas
         private boolean esLista;
         private Object [] lista;
-        private int [] tipoLista;
+        private Object [] tipoLista;
 
 
         /**
@@ -45,6 +46,7 @@ public class Scope {
             this.nombre = token.getText();
             this.tipo = token.getType();
             this.decl = context;
+            this.token = token;
             this.esFuncion = false;
         }
 
@@ -72,11 +74,12 @@ public class Scope {
          * @param lista
          * @param tipoLista
          */
-        public Identificador(Token token, ParserRuleContext context, int [] tipoLista) {
-            this.nombre = token.getText();
+        public Identificador(Token token, ParserRuleContext context, Object [] tipoLista) {
+            this.nombre = ((TokenCR)token).getNombre();
             this.decl = context;
             this.esFuncion = false;
             this.tipoLista= tipoLista;
+            this.token = token;
             this.esLista = true;
         }
 
@@ -116,11 +119,11 @@ public class Scope {
             this.lista = lista;
         }
 
-        public int[] getTipoLista() {
+        public Object[] getTipoLista() {
             return tipoLista;
         }
 
-        public void setTipoLista(int[] tipoLista) {
+        public void setTipoLista(Object[] tipoLista) {
             this.tipoLista = tipoLista;
         }
 
@@ -166,7 +169,7 @@ public class Scope {
         private String listaToString(){
             String p = "";
 
-            for(Object tp : lista){
+            for(Object tp : ((TokenCR)token).getLista()){
                 p += tp.toString() + ",";
             }
 
@@ -222,7 +225,7 @@ public class Scope {
     }
 
 
-    public void insertarLista(Token token, ParserRuleContext context, int [] tipos){
+    public void insertarLista(Token token, ParserRuleContext context, Object [] tipos){
         Identificador id = new Identificador(token, context, tipos);
 
         registros.add(id);

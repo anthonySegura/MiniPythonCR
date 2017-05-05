@@ -338,6 +338,14 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
 
         if(tipo != null) {
 
+            if(tipo.getClass().toString().equals("class SymbolTable.TokenCR")){
+                //TODO comprobar si ya esta declarado
+                ((TokenCR)tipo).setNombre(ctx.IDENTIFIER().getText());
+                tablaSimbolos.scopeActual().insertarLista((TokenCR)tipo, ctx, ((TokenCR)tipo).getLista());
+                return null;
+
+            }
+
             String id = ctx.IDENTIFIER().getText();
             //Se busca el id en la tabla de simbolos
             Scope.Identificador identificador = tablaSimbolos.scopeActual().buscar(id);
@@ -458,6 +466,7 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
             if((int)cmprsn != MPGrammarParser.INTEGER && (int)cmprsn != MPGrammarParser.CHAR && (int)exp != MPGrammarParser.INTEGER && (int)exp != MPGrammarParser.CHAR){
                 System.err.println("Error solo se pueden comparar INTEGER y CHAR");
             }
+
             else if((int)cmprsn != (int)exp){
                 System.err.println("Error tipos incompatibles");
             }
@@ -585,8 +594,11 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
 
         Object result = null;
         Token elmnt1 = (Token) visit(ctx.elementExpression());
-
         Object elmnt2 = visit(ctx.multiplicationFactor());
+
+        if(elmnt1.getClass().toString().equals("class SymbolTable.TokenCR")){
+            return elmnt1;
+        }
 
         if(elmnt2 != null){
             //Error en la expresion
@@ -852,7 +864,6 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
      */
     @Override
     public Object visitPrimlistexp(MPGrammarParser.PrimlistexpContext ctx){
-        System.out.println(visit(ctx.listExpression()).getClass());
         return visit(ctx.listExpression());
     }
 
@@ -903,7 +914,7 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
     @Override
     public Object visitListExpression(MPGrammarParser.ListExpressionContext ctx){
 
-        int [] exprsnLst = (int[]) visit(ctx.expressionList());
+        Object [] exprsnLst = (Object[]) visit(ctx.expressionList());
         Scope scopeActual = tablaSimbolos.scopeActual();
 
         Token token = new TokenCR(Table.LISTA, "Lista", exprsnLst);
