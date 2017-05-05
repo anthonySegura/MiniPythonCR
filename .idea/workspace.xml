@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ef7a0d16-c1e0-4978-afaf-52ddf6e969bd" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SymbolTable/Scope.java" afterPath="$PROJECT_DIR$/src/SymbolTable/Scope.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SymbolTable/Table.java" afterPath="$PROJECT_DIR$/src/SymbolTable/Table.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/visitors/SemanticVisitor.java" afterPath="$PROJECT_DIR$/src/visitors/SemanticVisitor.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,21 +32,16 @@
     <favorites_list name="MiniPython2" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5682853">
+    <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="Scope.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/SymbolTable/Scope.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="119">
-                  <caret line="115" column="9" lean-forward="true" selection-start-line="115" selection-start-column="9" selection-end-line="115" selection-end-column="9" />
+                <state relative-caret-position="374">
+                  <caret line="63" column="15" lean-forward="false" selection-start-line="63" selection-start-column="15" selection-end-line="63" selection-end-column="15" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#2105#2106#0" expanded="true" />
-                    <element signature="e#2150#2151#0" expanded="true" />
-                    <element signature="e#2213#2214#0" expanded="true" />
-                    <element signature="e#2273#2274#0" expanded="true" />
-                    <marker date="1493847376906" expanded="true" signature="3201:3544" ph="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -58,7 +51,7 @@
             <entry file="file://$PROJECT_DIR$/src/SymbolTable/Table.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="272">
-                  <caret line="29" column="7" lean-forward="true" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+                  <caret line="29" column="7" lean-forward="false" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
                   <folding />
                 </state>
               </provider>
@@ -67,7 +60,7 @@
           <file leaf-file-name="MPGrammar.tokens" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/grammar/MPGrammar.tokens">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-530">
+                <state relative-caret-position="0">
                   <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
@@ -79,55 +72,7 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="20689">
                   <caret line="1300" column="0" lean-forward="false" selection-start-line="1300" selection-start-column="0" selection-end-line="1300" selection-end-column="0" />
-                  <folding>
-                    <element signature="imports" expanded="false" />
-                    <element signature="e#19531#19532#0" expanded="false" />
-                    <element signature="e#19556#19557#0" expanded="false" />
-                    <element signature="e#35035#35036#0" expanded="false" />
-                    <element signature="e#35069#35070#0" expanded="false" />
-                    <element signature="e#35176#35177#0" expanded="false" />
-                    <element signature="e#35206#35207#0" expanded="false" />
-                    <element signature="e#35331#35332#0" expanded="false" />
-                    <element signature="e#35361#35362#0" expanded="false" />
-                    <element signature="e#35463#35464#0" expanded="false" />
-                    <element signature="e#35494#35495#0" expanded="false" />
-                    <element signature="e#35591#35592#0" expanded="false" />
-                    <element signature="e#35622#35623#0" expanded="false" />
-                    <element signature="e#35786#35787#0" expanded="false" />
-                    <element signature="e#35819#35820#0" expanded="false" />
-                    <element signature="e#37521#37522#0" expanded="false" />
-                    <element signature="e#37565#37566#0" expanded="false" />
-                    <element signature="e#37788#37789#0" expanded="false" />
-                    <element signature="e#37815#37816#0" expanded="false" />
-                    <element signature="e#38060#38061#0" expanded="false" />
-                    <element signature="e#38126#38127#0" expanded="false" />
-                    <element signature="e#38365#38366#0" expanded="false" />
-                    <element signature="e#38432#38433#0" expanded="false" />
-                    <element signature="e#38692#38693#0" expanded="false" />
-                    <element signature="e#38760#38761#0" expanded="false" />
-                    <element signature="e#38956#38957#0" expanded="false" />
-                    <element signature="e#38979#38980#0" expanded="false" />
-                    <element signature="e#43421#43422#0" expanded="false" />
-                    <element signature="e#43455#43456#0" expanded="false" />
-                    <element signature="e#45676#45677#0" expanded="false" />
-                    <element signature="e#45699#45700#0" expanded="false" />
-                    <element signature="e#46044#46045#0" expanded="false" />
-                    <element signature="e#46067#46068#0" expanded="false" />
-                    <element signature="e#46247#46248#0" expanded="false" />
-                    <element signature="e#46276#46277#0" expanded="false" />
-                    <element signature="e#46516#46517#0" expanded="false" />
-                    <element signature="e#46550#46551#0" expanded="false" />
-                    <element signature="e#47346#47347#0" expanded="false" />
-                    <element signature="e#47374#47375#0" expanded="false" />
-                    <element signature="e#53218#53219#0" expanded="false" />
-                    <element signature="e#53265#53266#0" expanded="false" />
-                    <element signature="e#55007#55008#0" expanded="false" />
-                    <element signature="e#55084#55085#0" expanded="false" />
-                    <element signature="e#55249#55250#0" expanded="false" />
-                    <element signature="e#55327#55328#0" expanded="false" />
-                    <element signature="e#55504#55505#0" expanded="false" />
-                    <element signature="e#55576#55577#0" expanded="false" />
-                  </folding>
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -135,8 +80,8 @@
           <file leaf-file-name="SemanticVisitor.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/visitors/SemanticVisitor.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2227">
-                  <caret line="356" column="72" lean-forward="false" selection-start-line="356" selection-start-column="72" selection-end-line="356" selection-end-column="72" />
+                <state relative-caret-position="287">
+                  <caret line="125" column="19" lean-forward="false" selection-start-line="125" selection-start-column="19" selection-end-line="125" selection-end-column="19" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -157,12 +102,12 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+        <leaf>
           <file leaf-file-name="SemanticVisitor.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/visitors/SemanticVisitor.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="8840">
-                  <caret line="554" column="21" lean-forward="false" selection-start-line="554" selection-start-column="21" selection-end-line="554" selection-end-column="21" />
+                <state relative-caret-position="674">
+                  <caret line="848" column="0" lean-forward="true" selection-start-line="848" selection-start-column="0" selection-end-line="848" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -173,28 +118,12 @@
           <file leaf-file-name="MPGrammar.g4" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/MPGrammar.g4">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="561">
-                  <caret line="182" column="52" lean-forward="false" selection-start-line="182" selection-start-column="30" selection-end-line="182" selection-end-column="52" />
+                <state relative-caret-position="799">
+                  <caret line="167" column="94" lean-forward="false" selection-start-line="167" selection-start-column="85" selection-end-line="167" selection-end-column="94" />
                   <folding>
                     <element signature="e#41#66#1" expanded="true" />
                     <element signature="e#68#132#1" expanded="true" />
                     <element signature="e#134#862#1" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ASTVisitor.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/visitors/ASTVisitor.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="10727">
-                  <caret line="640" column="0" lean-forward="false" selection-start-line="640" selection-start-column="0" selection-end-line="640" selection-end-column="0" />
-                  <folding>
-                    <element signature="imports" expanded="false" />
-                    <element signature="e#585#586#0" expanded="false" />
-                    <element signature="e#619#620#0" expanded="false" />
-                    <element signature="e#30322#30323#0" expanded="false" />
-                    <element signature="e#30354#30355#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -213,8 +142,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>visit</find>
-      <find>run</find>
       <find>mismatched</find>
       <find>AstGui</find>
       <find>ast</find>
@@ -243,6 +170,8 @@
       <find>runListener</find>
       <find>ERROR</find>
       <find>buscar</find>
+      <find>visitde</find>
+      <find>visitDefstat</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -254,17 +183,17 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/SymbolTable/Table.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/com/textEditor/ArvoreDeProjetos.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/com/textEditor/AstGUI.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/com/textEditor/JCEditor.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/visitors/SemanticVisitor.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/visitors/ASTVisitor.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/exceptions/TokensException.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/SymbolTable/Scope.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/com/textEditor/AreaDeTexto.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/exceptions/DefaultError.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/exceptions/SyntaxException.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/exceptions/TokensException.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/com/textEditor/AstGUI.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/SymbolTable/Scope.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/exceptions/DefaultError.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/SymbolTable/Table.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/com/textEditor/AreaDeTexto.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/visitors/SemanticVisitor.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -285,9 +214,9 @@
         <option value="$PROJECT_DIR$/src/grammar/MPGrammarParser.java" />
         <option value="$PROJECT_DIR$/src/com/textEditor/JCEditor.java" />
         <option value="$PROJECT_DIR$/MPGrammar.g4" />
-        <option value="$PROJECT_DIR$/src/SymbolTable/Scope.java" />
         <option value="$PROJECT_DIR$/src/SymbolTable/Table.java" />
         <option value="$PROJECT_DIR$/src/visitors/SemanticVisitor.java" />
+        <option value="$PROJECT_DIR$/src/SymbolTable/Scope.java" />
       </list>
     </option>
   </component>
@@ -301,8 +230,10 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1366" />
-    <option name="height" value="768" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="2576" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -322,6 +253,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -362,6 +295,42 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="visitors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MiniPython2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MiniPython2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SymbolTable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MiniPython2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MiniPython2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="grammar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -369,15 +338,13 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="$PROJECT_DIR$/MPGrammar.g4::/auto-gen" value="false" />
     <property name="$PROJECT_DIR$/MPGrammar.g4::/output-dir" value="$PROJECT_DIR$/src" />
     <property name="$PROJECT_DIR$/MPGrammar.g4::/package" value="grammar" />
@@ -508,136 +475,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Cold Fusion runner description" factoryName="Cold Fusion" custom_browser="" web_path="">
-      <method />
-    </configuration>
-    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="myFilePath" />
-      <option name="GLUE" />
-      <option name="myNameFilter" />
-      <option name="myGeneratedName" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
-      <option name="BCName" value="" />
-      <option name="IOSSimulatorSdkPath" value="" />
-      <option name="adlOptions" value="" />
-      <option name="airProgramParameters" value="" />
-      <option name="appDescriptorForEmulator" value="Android" />
-      <option name="debugTransport" value="USB" />
-      <option name="debuggerSdkRaw" value="BC SDK" />
-      <option name="emulator" value="NexusOne" />
-      <option name="emulatorAdlOptions" value="" />
-      <option name="fastPackaging" value="true" />
-      <option name="fullScreenHeight" value="0" />
-      <option name="fullScreenWidth" value="0" />
-      <option name="launchUrl" value="false" />
-      <option name="launcherParameters">
-        <LauncherParameters>
-          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
-          <option name="launcherType" value="OSDefault" />
-          <option name="newPlayerInstance" value="false" />
-          <option name="playerPath" value="FlashPlayerDebugger.exe" />
-        </LauncherParameters>
-      </option>
-      <option name="mobileRunTarget" value="Emulator" />
-      <option name="moduleName" value="" />
-      <option name="overriddenMainClass" value="" />
-      <option name="overriddenOutputFileName" value="" />
-      <option name="overrideMainClass" value="false" />
-      <option name="runTrusted" value="true" />
-      <option name="screenDpi" value="0" />
-      <option name="screenHeight" value="0" />
-      <option name="screenWidth" value="0" />
-      <option name="url" value="http://" />
-      <option name="usbDebugPort" value="7936" />
-      <method />
-    </configuration>
-    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
-      <option name="BCName" value="" />
-      <option name="launcherParameters">
-        <LauncherParameters>
-          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
-          <option name="launcherType" value="OSDefault" />
-          <option name="newPlayerInstance" value="false" />
-          <option name="playerPath" value="FlashPlayerDebugger.exe" />
-        </LauncherParameters>
-      </option>
-      <option name="moduleName" value="" />
-      <option name="trusted" value="true" />
-      <method />
-    </configuration>
     <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -652,15 +489,6 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <method />
-    </configuration>
-    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
-      <setting name="vmparams" value="" />
-      <setting name="cmdLine" value="run-app" />
-      <setting name="passParentEnv" value="true" />
-      <setting name="launchBrowser" value="true" />
-      <setting name="launchBrowserUrl" value="" />
-      <setting name="depsClasspath" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -705,22 +533,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
-      <node-interpreter value="project" />
-      <working-dir value="" />
-      <envs />
-      <scope-kind value="ALL" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
-      <config-file value="" />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
     <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -754,12 +566,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -786,28 +592,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run" />
-      <scripts />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
-      <method />
-    </configuration>
-    <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
     <list size="1">
@@ -871,66 +655,41 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1366" height="768" extended-state="0" />
+    <frame x="-8" y="-8" width="2576" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32852808" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19967794" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2234375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962063" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3993559" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19967794" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5410628" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21168438" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3993559" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32852808" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962063" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3993559" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32852808" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19967794" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22382398" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -947,14 +706,6 @@
               </option>
               <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
                 <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
               </option>
             </State>
           </value>
@@ -1064,55 +815,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="55" column="13" lean-forward="false" selection-start-line="55" selection-start-column="13" selection-end-line="55" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#19531#19532#0" expanded="false" />
-            <element signature="e#19556#19557#0" expanded="false" />
-            <element signature="e#35035#35036#0" expanded="false" />
-            <element signature="e#35069#35070#0" expanded="false" />
-            <element signature="e#35176#35177#0" expanded="false" />
-            <element signature="e#35206#35207#0" expanded="false" />
-            <element signature="e#35331#35332#0" expanded="false" />
-            <element signature="e#35361#35362#0" expanded="false" />
-            <element signature="e#35463#35464#0" expanded="false" />
-            <element signature="e#35494#35495#0" expanded="false" />
-            <element signature="e#35591#35592#0" expanded="false" />
-            <element signature="e#35622#35623#0" expanded="false" />
-            <element signature="e#35786#35787#0" expanded="false" />
-            <element signature="e#35819#35820#0" expanded="false" />
-            <element signature="e#37521#37522#0" expanded="false" />
-            <element signature="e#37565#37566#0" expanded="false" />
-            <element signature="e#37788#37789#0" expanded="false" />
-            <element signature="e#37815#37816#0" expanded="false" />
-            <element signature="e#38060#38061#0" expanded="false" />
-            <element signature="e#38126#38127#0" expanded="false" />
-            <element signature="e#38365#38366#0" expanded="false" />
-            <element signature="e#38432#38433#0" expanded="false" />
-            <element signature="e#38692#38693#0" expanded="false" />
-            <element signature="e#38760#38761#0" expanded="false" />
-            <element signature="e#38956#38957#0" expanded="false" />
-            <element signature="e#38979#38980#0" expanded="false" />
-            <element signature="e#43421#43422#0" expanded="false" />
-            <element signature="e#43455#43456#0" expanded="false" />
-            <element signature="e#45676#45677#0" expanded="false" />
-            <element signature="e#45699#45700#0" expanded="false" />
-            <element signature="e#46044#46045#0" expanded="false" />
-            <element signature="e#46067#46068#0" expanded="false" />
-            <element signature="e#46247#46248#0" expanded="false" />
-            <element signature="e#46276#46277#0" expanded="false" />
-            <element signature="e#46516#46517#0" expanded="false" />
-            <element signature="e#46550#46551#0" expanded="false" />
-            <element signature="e#47346#47347#0" expanded="false" />
-            <element signature="e#47374#47375#0" expanded="false" />
-            <element signature="e#53218#53219#0" expanded="false" />
-            <element signature="e#53265#53266#0" expanded="false" />
-            <element signature="e#55007#55008#0" expanded="false" />
-            <element signature="e#55084#55085#0" expanded="false" />
-            <element signature="e#55249#55250#0" expanded="false" />
-            <element signature="e#55327#55328#0" expanded="false" />
-            <element signature="e#55504#55505#0" expanded="false" />
-            <element signature="e#55576#55577#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1167,55 +870,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="935">
           <caret line="55" column="13" lean-forward="false" selection-start-line="55" selection-start-column="13" selection-end-line="55" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#19531#19532#0" expanded="false" />
-            <element signature="e#19556#19557#0" expanded="false" />
-            <element signature="e#35035#35036#0" expanded="false" />
-            <element signature="e#35069#35070#0" expanded="false" />
-            <element signature="e#35176#35177#0" expanded="false" />
-            <element signature="e#35206#35207#0" expanded="false" />
-            <element signature="e#35331#35332#0" expanded="false" />
-            <element signature="e#35361#35362#0" expanded="false" />
-            <element signature="e#35463#35464#0" expanded="false" />
-            <element signature="e#35494#35495#0" expanded="false" />
-            <element signature="e#35591#35592#0" expanded="false" />
-            <element signature="e#35622#35623#0" expanded="false" />
-            <element signature="e#35786#35787#0" expanded="false" />
-            <element signature="e#35819#35820#0" expanded="false" />
-            <element signature="e#37521#37522#0" expanded="false" />
-            <element signature="e#37565#37566#0" expanded="false" />
-            <element signature="e#37788#37789#0" expanded="false" />
-            <element signature="e#37815#37816#0" expanded="false" />
-            <element signature="e#38060#38061#0" expanded="false" />
-            <element signature="e#38126#38127#0" expanded="false" />
-            <element signature="e#38365#38366#0" expanded="false" />
-            <element signature="e#38432#38433#0" expanded="false" />
-            <element signature="e#38692#38693#0" expanded="false" />
-            <element signature="e#38760#38761#0" expanded="false" />
-            <element signature="e#38956#38957#0" expanded="false" />
-            <element signature="e#38979#38980#0" expanded="false" />
-            <element signature="e#43421#43422#0" expanded="false" />
-            <element signature="e#43455#43456#0" expanded="false" />
-            <element signature="e#45676#45677#0" expanded="false" />
-            <element signature="e#45699#45700#0" expanded="false" />
-            <element signature="e#46044#46045#0" expanded="false" />
-            <element signature="e#46067#46068#0" expanded="false" />
-            <element signature="e#46247#46248#0" expanded="false" />
-            <element signature="e#46276#46277#0" expanded="false" />
-            <element signature="e#46516#46517#0" expanded="false" />
-            <element signature="e#46550#46551#0" expanded="false" />
-            <element signature="e#47346#47347#0" expanded="false" />
-            <element signature="e#47374#47375#0" expanded="false" />
-            <element signature="e#53218#53219#0" expanded="false" />
-            <element signature="e#53265#53266#0" expanded="false" />
-            <element signature="e#55007#55008#0" expanded="false" />
-            <element signature="e#55084#55085#0" expanded="false" />
-            <element signature="e#55249#55250#0" expanded="false" />
-            <element signature="e#55327#55328#0" expanded="false" />
-            <element signature="e#55504#55505#0" expanded="false" />
-            <element signature="e#55576#55577#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1341,13 +996,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar!/sun/misc/Unsafe.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="353" column="23" lean-forward="false" selection-start-line="353" selection-start-column="23" selection-end-line="353" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar!/sun/misc/Unsafe.class" />
     <entry file="jar://$PROJECT_DIR$/antlr4-runtime-4.7.jar!/org/antlr/v4/runtime/tree/AbstractParseTreeVisitor.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="67">
@@ -1359,55 +1008,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20689">
           <caret line="1300" column="0" lean-forward="false" selection-start-line="1300" selection-start-column="0" selection-end-line="1300" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#19531#19532#0" expanded="false" />
-            <element signature="e#19556#19557#0" expanded="false" />
-            <element signature="e#35035#35036#0" expanded="false" />
-            <element signature="e#35069#35070#0" expanded="false" />
-            <element signature="e#35176#35177#0" expanded="false" />
-            <element signature="e#35206#35207#0" expanded="false" />
-            <element signature="e#35331#35332#0" expanded="false" />
-            <element signature="e#35361#35362#0" expanded="false" />
-            <element signature="e#35463#35464#0" expanded="false" />
-            <element signature="e#35494#35495#0" expanded="false" />
-            <element signature="e#35591#35592#0" expanded="false" />
-            <element signature="e#35622#35623#0" expanded="false" />
-            <element signature="e#35786#35787#0" expanded="false" />
-            <element signature="e#35819#35820#0" expanded="false" />
-            <element signature="e#37521#37522#0" expanded="false" />
-            <element signature="e#37565#37566#0" expanded="false" />
-            <element signature="e#37788#37789#0" expanded="false" />
-            <element signature="e#37815#37816#0" expanded="false" />
-            <element signature="e#38060#38061#0" expanded="false" />
-            <element signature="e#38126#38127#0" expanded="false" />
-            <element signature="e#38365#38366#0" expanded="false" />
-            <element signature="e#38432#38433#0" expanded="false" />
-            <element signature="e#38692#38693#0" expanded="false" />
-            <element signature="e#38760#38761#0" expanded="false" />
-            <element signature="e#38956#38957#0" expanded="false" />
-            <element signature="e#38979#38980#0" expanded="false" />
-            <element signature="e#43421#43422#0" expanded="false" />
-            <element signature="e#43455#43456#0" expanded="false" />
-            <element signature="e#45676#45677#0" expanded="false" />
-            <element signature="e#45699#45700#0" expanded="false" />
-            <element signature="e#46044#46045#0" expanded="false" />
-            <element signature="e#46067#46068#0" expanded="false" />
-            <element signature="e#46247#46248#0" expanded="false" />
-            <element signature="e#46276#46277#0" expanded="false" />
-            <element signature="e#46516#46517#0" expanded="false" />
-            <element signature="e#46550#46551#0" expanded="false" />
-            <element signature="e#47346#47347#0" expanded="false" />
-            <element signature="e#47374#47375#0" expanded="false" />
-            <element signature="e#53218#53219#0" expanded="false" />
-            <element signature="e#53265#53266#0" expanded="false" />
-            <element signature="e#55007#55008#0" expanded="false" />
-            <element signature="e#55084#55085#0" expanded="false" />
-            <element signature="e#55249#55250#0" expanded="false" />
-            <element signature="e#55327#55328#0" expanded="false" />
-            <element signature="e#55504#55505#0" expanded="false" />
-            <element signature="e#55576#55577#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1419,39 +1020,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/visitors/ASTVisitor.java">
+    <entry file="file://$PROJECT_DIR$/src/grammar/MPGrammar.tokens">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10727">
-          <caret line="640" column="0" lean-forward="false" selection-start-line="640" selection-start-column="0" selection-end-line="640" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#585#586#0" expanded="false" />
-            <element signature="e#619#620#0" expanded="false" />
-            <element signature="e#30322#30323#0" expanded="false" />
-            <element signature="e#30354#30355#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SymbolTable/Scope.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="115" column="9" lean-forward="true" selection-start-line="115" selection-start-column="9" selection-end-line="115" selection-end-column="9" />
+        <state relative-caret-position="374">
+          <caret line="63" column="15" lean-forward="false" selection-start-line="63" selection-start-column="15" selection-end-line="63" selection-end-column="15" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2105#2106#0" expanded="true" />
-            <element signature="e#2150#2151#0" expanded="true" />
-            <element signature="e#2213#2214#0" expanded="true" />
-            <element signature="e#2273#2274#0" expanded="true" />
-            <marker date="1493847376906" expanded="true" signature="3201:3544" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/grammar/MPGrammar.tokens">
+    <entry file="file://$PROJECT_DIR$/src/visitors/ASTVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-530">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="338">
+          <caret line="192" column="0" lean-forward="true" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1459,15 +1049,15 @@
     <entry file="file://$PROJECT_DIR$/src/SymbolTable/Table.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="29" column="7" lean-forward="true" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+          <caret line="29" column="7" lean-forward="false" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MPGrammar.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="182" column="52" lean-forward="false" selection-start-line="182" selection-start-column="30" selection-end-line="182" selection-end-column="52" />
+        <state relative-caret-position="799">
+          <caret line="167" column="94" lean-forward="false" selection-start-line="167" selection-start-column="85" selection-end-line="167" selection-end-column="94" />
           <folding>
             <element signature="e#41#66#1" expanded="true" />
             <element signature="e#68#132#1" expanded="true" />
@@ -1478,8 +1068,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/visitors/SemanticVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2227">
-          <caret line="356" column="72" lean-forward="false" selection-start-line="356" selection-start-column="72" selection-end-line="356" selection-end-column="72" />
+        <state relative-caret-position="287">
+          <caret line="125" column="19" lean-forward="false" selection-start-line="125" selection-start-column="19" selection-end-line="125" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

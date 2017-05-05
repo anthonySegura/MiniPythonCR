@@ -29,6 +29,8 @@ public class Scope {
         private Object [] parametros;
         private int [] tipoParametros;  //Codigo del tipo de dato de cada parametro
         private boolean esFuncion;
+        private Object [] lista;
+        private int [] tipoLista;
 
         /**
          * Constructor para las variables y parametros
@@ -58,6 +60,14 @@ public class Scope {
             this.esFuncion = true;
             this.parametros = parametros;
             this.tipoParametros = tipoParametros;
+        }
+        //lista
+        public Identificador(Token token, ParserRuleContext context, Object [] lista,int [] tipoLista) {
+            this.nombre = token.getText();
+            this.decl = context;
+            this.esFuncion = false;
+            this.lista= lista;
+            this.tipoLista=tipoLista;
         }
 
         public String getNombre() {
