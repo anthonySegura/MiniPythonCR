@@ -3,6 +3,7 @@ package visitors;
 import SymbolTable.Scope;
 import SymbolTable.Table;
 import SymbolTable.TokenCR;
+import com.textEditor.JCEditor;
 import grammar.MPGrammarBaseVisitor;
 import grammar.MPGrammarParser;
 import org.antlr.v4.runtime.CommonToken;
@@ -187,7 +188,10 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
             scopeActual.insertar(new CommonToken(tipo, nombre), ctx);
         }
         else {
-            System.err.println("Error no se encuentra los tipos de los parametros");
+            String tmp = JCEditor.consoleTextArea.getText() + "\n";
+            tmp += "Error no se encuentra los tipos de los parametros";
+            JCEditor.showMessage(tmp);
+
             return null;
         }
 
@@ -234,7 +238,10 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
                 scopeActual.insertar(new CommonToken(tipo, nombre), ctx);
             }
             else {
-                System.err.println("Error no se encuentra los tipos de los parametros");
+                String tmp = JCEditor.consoleTextArea.getText() + "\n";
+                tmp += "Error no se encuentra los tipos de los parametros";
+                JCEditor.showMessage(tmp);
+
                 return null;
             }
             params[i] = node.getText();
@@ -258,7 +265,10 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
         //Se comprueba si la condición es correcta
         Object cmprsn = visit(ctx.expression());
         if(cmprsn == null){
-            System.err.println("Condición invalida en IF ");
+            String tmp = JCEditor.consoleTextArea.getText() + "\n";
+            tmp += "Condición invalida en IF ";
+            JCEditor.showMessage(tmp);
+
         }
         visit(ctx.sequence(0));
         visit(ctx.sequence(1));
@@ -318,7 +328,10 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
 
         Object exprsn = visit(ctx.expression());
         if(exprsn == null){
-            System.err.println("Error en el print");
+            String tmp = JCEditor.consoleTextArea.getText() + "\n";
+            tmp += "Error en el print";
+            JCEditor.showMessage(tmp);
+
         }
 
         return null;
@@ -357,7 +370,10 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
                 //Se comprueba si los tipos coinciden
                 else {
                     if (identificador.getTipo() != (int) tipo) {
-                        System.err.println("Error tipos incompatibles en línea " + ctx.IDENTIFIER().getSymbol().getLine());
+                        String tmp = JCEditor.consoleTextArea.getText() + "\n";
+                        tmp += "Error tipos incompatibles en línea " + ctx.IDENTIFIER().getSymbol().getLine();
+                        JCEditor.showMessage(tmp);
+
                     }
                 }
             }
@@ -370,16 +386,22 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
         boolean iguales = true;
 
         if(funcArgs.length != callArgs.length){
-            System.err.println("Numero invalido de parametros, Se esperaban : " + funcArgs.length +
-                    " Recibidos : " + callArgs.length);
+            String tmp = JCEditor.consoleTextArea.getText() + "\n";
+            tmp += "Numero invalido de parametros, Se esperaban : " + funcArgs.length +
+                    " Recibidos : " + callArgs.length;
+            JCEditor.showMessage(tmp);
+
             return false;
         }
 
         for(int i = 0; i < funcArgs.length; i++){
             if(funcArgs[i] != (int)callArgs[i]){
                 iguales = false;
-                System.err.println("Tipo de parametro invalido, Se esperaba : " +
-                        Table._SYMBOLIC_NAMES[funcArgs[i]] + " Recibido : " + Table._SYMBOLIC_NAMES[(int)callArgs[i]]);
+                String tmp = JCEditor.consoleTextArea.getText() + "\n";
+                tmp += "Tipo de parametro invalido, Se esperaba : " +
+                        Table._SYMBOLIC_NAMES[funcArgs[i]] + " Recibido : " + Table._SYMBOLIC_NAMES[(int)callArgs[i]];
+                JCEditor.showMessage(tmp);
+
             }
         }
 
@@ -404,8 +426,11 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
             int [] params = funcion.getTipoParametros();
             Object[] args = (Object[])visit(ctx.expressionList());
             if(!compareArgs(params, args)){
-                System.err.println("Parametros invalidos en la llamada a la funcion " + ctx.getText() +
-                     " Línea " + ctx.PDER().getSymbol().getLine());
+                String tmp = JCEditor.consoleTextArea.getText() + "\n";
+                tmp += "Parametros invalidos en la llamada a la funcion " + ctx.getText() +
+                        " Línea " + ctx.PDER().getSymbol().getLine();
+                JCEditor.showMessage(tmp);
+
             }
         }
 
@@ -467,11 +492,17 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
             }
 
             if((int)cmprsn != MPGrammarParser.INTEGER && (int)cmprsn != MPGrammarParser.CHAR && (int)exp != MPGrammarParser.INTEGER && (int)exp != MPGrammarParser.CHAR){
-                System.err.println("Error solo se pueden comparar INTEGER y CHAR");
+                String tmp = JCEditor.consoleTextArea.getText() + "\n";
+                tmp += "Error solo se pueden comparar INTEGER y CHAR";
+                JCEditor.showMessage(tmp);
+
             }
 
             else if((int)cmprsn != (int)exp){
-                System.err.println("Error tipos incompatibles");
+                String tmp = JCEditor.consoleTextArea.getText() + "\n";
+                tmp += "Error tipos incompatibles";
+                JCEditor.showMessage(tmp);
+
             }
 
             //Todo esta bien
@@ -508,7 +539,9 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
             int tipoAnt = (int)visit(ctx.additionExpression(0));
             for(int i = 0; i < ctx.additionExpression().size(); i++){
                 if(tipoAnt != (int)visit(ctx.additionExpression(i))){
-                    System.err.println("Error tipos compatibles en comparación");
+                    String tmp = JCEditor.consoleTextArea.getText() + "\n";
+                    tmp += "Error tipos compatibles en comparación";
+                    JCEditor.showMessage(tmp);
                     tipo = Table.ERROR;
                     break;
                 }
@@ -541,12 +574,18 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
                 return null;
             }
             if((int)mulexp != (int)addFact){
-                System.err.println("Error elementos incompatibles " +
+                String tmp = JCEditor.consoleTextArea.getText() + "\n";
+                tmp += "Error elementos incompatibles " +
                         " " + Table._SYMBOLIC_NAMES[(int)mulexp] + " [+ , -] " + Table._SYMBOLIC_NAMES[(int)addFact] +
-                        " en " + "'" + ctx.getText() + "'");
+                        " en " + "'" + ctx.getText() + "'";
+                JCEditor.showMessage(tmp);
+
             }
             else if((int)mulexp != MPGrammarParser.INTEGER && (int) mulexp != MPGrammarParser.STRING && (int)addFact != MPGrammarParser.INTEGER && (int) addFact != MPGrammarParser.STRING){
-                System.err.println("Error tipos de datos invalidos para la suma");
+                String tmp = JCEditor.consoleTextArea.getText() + "\n";
+                tmp += "Error tipos de datos invalidos para la suma";
+                JCEditor.showMessage(tmp);
+
             }
             else {
                 result = mulexp;
@@ -578,7 +617,9 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
             int tipoAnt = (int)visit(ctx.multiplicationExpression(0));
             for(int i = 0; i < ctx.multiplicationExpression().size(); i++){
                 if(tipoAnt != (int)visit(ctx.multiplicationExpression(i))){
-                    System.err.println("Error tipos incompatibles");
+                    String tmp = JCEditor.consoleTextArea.getText() + "\n";
+                    tmp += "Error tipos incompatibles";
+                    JCEditor.showMessage(tmp);
                     tipo = Table.ERROR;
                     break;
                 }
@@ -613,12 +654,18 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
                 return null;
             }
             if(elmnt1.getType() != (int)elmnt2 ){
-                System.err.println("Error elementos incompatibles en la multiplicacion en línea " + elmnt1.getLine() +
+                String tmp = JCEditor.consoleTextArea.getText() + "\n";
+                tmp += "Error elementos incompatibles en la multiplicacion en línea " + elmnt1.getLine() +
                         " " + Table._SYMBOLIC_NAMES[elmnt1.getType()] + " [* , /] " + Table._SYMBOLIC_NAMES[(int)elmnt2] +
-                        " en " + "'" + ctx.getText() + "'");
+                        " en " + "'" + ctx.getText() + "'";
+                JCEditor.showMessage(tmp);
+
             }
             else if(elmnt1.getType() != MPGrammarParser.INTEGER && (int)elmnt2 != MPGrammarParser.INTEGER){
-                System.err.println("Error tipos de datos invalidos para la multiplicación en línea " + elmnt1.getLine());
+                String tmp = JCEditor.consoleTextArea.getText() + "\n";
+                tmp += "Error tipos de datos invalidos para la multiplicación en línea " + elmnt1.getLine();
+                JCEditor.showMessage(tmp);
+
             }
             else {
                 result = elmnt1.getType();
@@ -651,7 +698,9 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
             int tipoAnt = ((Token)visit(ctx.elementExpression(0))).getType();
             for(int i = 0; i < ctx.elementExpression().size(); i++) {
                 if(tipoAnt != ((Token)visit(ctx.elementExpression(i))).getType()){
-                    System.err.println("Error tipos incompatibles");
+                    String tmp = JCEditor.consoleTextArea.getText() + "\n";
+                    tmp += "Error tipos incompatibles";
+                    JCEditor.showMessage(tmp);
                     tipo = Table.ERROR;
                     break;
                 }
@@ -688,8 +737,11 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
                 }
             }
             else{
-                System.err.println("Error " + Table._SYMBOLIC_NAMES[id.getTipo()] + " no puede ser accesado -> "+
-                ctx.getText());
+                String tmp = JCEditor.consoleTextArea.getText() + "\n";
+                tmp += "Error " + Table._SYMBOLIC_NAMES[id.getTipo()] + " no puede ser accesado -> "+
+                        ctx.getText();
+                JCEditor.showMessage(tmp);
+
                 result = new CommonToken(0, "Null");
             }
         }
@@ -748,16 +800,22 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
             int [] params = funcion.getTipoParametros();
             Object [] args = (Object[])visit(ctx.expressionList());
             if(!compareArgs(params, args)){
-                System.err.println("Parametros invalidos en la llamada a la funcion " + ctx.getText() +
-                        " Línea " + ctx.PDER().getSymbol().getLine());
+                String tmp = JCEditor.consoleTextArea.getText() + "\n";
+                tmp += "Parametros invalidos en la llamada a la funcion " + ctx.getText() +
+                        " Línea " + ctx.PDER().getSymbol().getLine();
+                JCEditor.showMessage(tmp);
+
             }
             else {
                 funcType = new CommonToken(funcion.getTipo(), ctx.IDENTIFIER().getText());
             }
         }
         else {
-            System.err.println("La funcion " + ctx.IDENTIFIER().getText() + " no esta declarada " +
-                "Línea " + ctx.IDENTIFIER().getSymbol().getLine());
+            String tmp = JCEditor.consoleTextArea.getText() + "\n";
+            tmp += "La funcion " + ctx.IDENTIFIER().getText() + " no esta declarada " +
+                    "Línea " + ctx.IDENTIFIER().getSymbol().getLine();
+            JCEditor.showMessage(tmp);
+
         }
 
 
@@ -863,7 +921,10 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
         Token token = null;
         Scope.Identificador id = tablaSimbolos.buscar(ctx.IDENTIFIER().getText());
         if(id == null){
-            System.err.println("Error " + ctx.IDENTIFIER().getText() + " no esta declarado en este scope");
+            String tmp = JCEditor.consoleTextArea.getText() + "\n";
+            tmp += "Error " + ctx.IDENTIFIER().getText() + " no esta declarado en este scope";
+            JCEditor.showMessage(tmp);
+
         }
         else {
             token = new CommonToken(id.getTipo(), ctx.IDENTIFIER().getText());
@@ -929,7 +990,10 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
         int lista = (int) visit(ctx.expression());
 
         if(lista != Table.LISTA && lista != MPGrammarParser.STRING){
-            System.err.println("Error len solo se puede aplicar a una lista " + ctx.getText());
+            String tmp = JCEditor.consoleTextArea.getText() + "\n";
+            tmp += "Error len solo se puede aplicar a una lista " + ctx.getText();
+            JCEditor.showMessage(tmp);
+
         }
         else{
             result = new CommonToken(MPGrammarParser.INTEGER, "len");
