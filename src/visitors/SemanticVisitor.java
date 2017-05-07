@@ -22,6 +22,7 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
     //Indica si el proceso de analisis semantico se realizo con exito o no
     private Boolean Status = true;
 
+
     @Override
     public Object visitProgramN(MPGrammarParser.ProgramNContext ctx) {
 
@@ -530,6 +531,10 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
         Object mulexp = visit(ctx.multiplicationExpression());
         Object addFact = visit(ctx.additionFactor());
 
+        if(mulexp.getClass().toString().equals("class SymbolTable.TokenCR")){
+            return mulexp;
+        }
+
         if(addFact != null){
             //Error en la expresion
             if((int)addFact == Table.ERROR){
@@ -673,19 +678,28 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
         if(elmntacss != null){
             Scope.Identificador id = tablaSimbolos.buscar(((Token)prmt).getText());
             if(id.isEsLista()){
-                System.out.println("");
+                int index = Integer.parseInt(((Token)elmntacss).getText());
+                int valor = id.getIndex(index);
+                if(valor != -1){
+                    result = new CommonToken(valor, Table._SYMBOLIC_NAMES[valor]);
+                }
+                else {
+                    result = new CommonToken(0, "Null");
+                }
             }
             else{
                 System.err.println("Error " + Table._SYMBOLIC_NAMES[id.getTipo()] + " no puede ser accesado -> "+
                 ctx.getText());
                 result = new CommonToken(0, "Null");
-
             }
         }
 
         return result;
     }
 
+
+    //Solucion poco elegante
+    private Boolean elmntAcss = false;
 
     /**
      * Visit a parse tree produced by the {@code elmntacess}
@@ -697,14 +711,22 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
     public Object visitElmntacess(MPGrammarParser.ElmntacessContext ctx){
 
         boolean error = false;
+        Token result = null;
 
+        //Se chequean las expresiones
         for (int i = 0; i < ctx.expression().size(); i++){
             if(visit(ctx.expression(i)) == null){
                 error = true;
             }
         }
 
-        Token result = (error || ctx.expression().isEmpty())? null : new CommonToken((int)visit(ctx.expression(ctx.expression().size() - 1)), "x[0]");
+        //Cochinada para que funcione
+        if(!ctx.expression().isEmpty()){
+            elmntAcss = true;
+            Object l = visit(ctx.expression(0));
+            String value = ((Token)l).getText();
+            result = (error)? null : new CommonToken((int)visit(ctx.expression(ctx.expression().size() - 1)), value);
+        }
 
         return result;
     }
@@ -805,7 +827,10 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
     @Override
     public Object visitIntexp(MPGrammarParser.IntexpContext ctx){
 
-        Token token = new CommonToken(MPGrammarParser.INTEGER, ctx.INTEGER().getText());
+        Token token = (!elmntAcss)? new CommonToken(MPGrammarParser.INTEGER, ctx.INTEGER().getText()):
+                new TokenCR(MPGrammarParser.INTEGER, ctx.INTEGER().getText());
+
+        if(elmntAcss) elmntAcss = false;
 
         return token;
     }

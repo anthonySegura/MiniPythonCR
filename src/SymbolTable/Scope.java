@@ -79,6 +79,7 @@ public class Scope {
             this.decl = context;
             this.esFuncion = false;
             this.tipoLista= tipoLista;
+            tipo = Table.LISTA;
             this.token = token;
             this.esLista = true;
         }
@@ -142,6 +143,15 @@ public class Scope {
         public ParserRuleContext getDecl() {
 
             return decl;
+        }
+
+        public int getIndex(int index){
+            if(index < ((TokenCR)token).getLista().length){
+                return (int)((TokenCR)token).getLista()[index];
+            }
+            else{
+                return -1;
+            }
         }
 
         public void setDecl(ParserRuleContext decl) {
