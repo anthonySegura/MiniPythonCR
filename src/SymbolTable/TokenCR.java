@@ -12,7 +12,15 @@ public class TokenCR extends CommonToken{
     private Object [] tipoParametros;
     private String nombre;
     private boolean esLista;
+    private boolean esElmntAcess;
+    private int tipo;
 
+
+    /**
+     * Constructor por defecto
+     * @param type
+     * @param text
+     */
     public TokenCR(int type, String text) {
         super(type, text);
     }

@@ -331,31 +331,33 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
      * @return the visitor result
      */
     @Override
-    public Object visitAssignstat(MPGrammarParser.AssignstatContext ctx){
+    public Object visitAssignstat(MPGrammarParser.AssignstatContext ctx) {
 
         //ID = expression
         Object tipo = visit(ctx.expression());
 
-        if(tipo != null) {
+        if (tipo != null) {
 
-            if(tipo.getClass().toString().equals("class SymbolTable.TokenCR")){
+            if (tipo.getClass().toString().equals("class SymbolTable.TokenCR")) {
                 //TODO comprobar si ya esta declarado
-                ((TokenCR)tipo).setNombre(ctx.IDENTIFIER().getText());
-                tablaSimbolos.scopeActual().insertarLista((TokenCR)tipo, ctx, ((TokenCR)tipo).getLista());
+                ((TokenCR) tipo).setNombre(ctx.IDENTIFIER().getText());
+                tablaSimbolos.scopeActual().insertarLista((TokenCR) tipo, ctx, ((TokenCR) tipo).getLista());
                 return null;
 
             }
+            if ((int) tipo != 0) {
 
-            String id = ctx.IDENTIFIER().getText();
-            //Se busca el id en la tabla de simbolos
-            Scope.Identificador identificador = tablaSimbolos.scopeActual().buscar(id);
-            if (identificador == null) {
-                tablaSimbolos.scopeActual().insertar(new CommonToken((int)tipo, id), ctx);
-            }
-            //Se comprueba si los tipos coinciden
-            else {
-                if (identificador.getTipo() != (int)tipo) {
-                    System.err.println("Error tipos incompatibles en línea " + ctx.IDENTIFIER().getSymbol().getLine());
+                String id = ctx.IDENTIFIER().getText();
+                //Se busca el id en la tabla de simbolos
+                Scope.Identificador identificador = tablaSimbolos.scopeActual().buscar(id);
+                if (identificador == null) {
+                    tablaSimbolos.scopeActual().insertar(new CommonToken((int) tipo, id), ctx);
+                }
+                //Se comprueba si los tipos coinciden
+                else {
+                    if (identificador.getTipo() != (int) tipo) {
+                        System.err.println("Error tipos incompatibles en línea " + ctx.IDENTIFIER().getSymbol().getLine());
+                    }
                 }
             }
         }
@@ -665,9 +667,23 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
     public Object visitElmntexp(MPGrammarParser.ElmntexpContext ctx){
 
         Object prmt = visit(ctx.primitiveExpression());
-        visit(ctx.elementAccess());
+        Object result = prmt;
+        Object elmntacss = visit(ctx.elementAccess());
 
-        return prmt;
+        if(elmntacss != null){
+            Scope.Identificador id = tablaSimbolos.buscar(((Token)prmt).getText());
+            if(id.isEsLista()){
+                System.out.println("");
+            }
+            else{
+                System.err.println("Error " + Table._SYMBOLIC_NAMES[id.getTipo()] + " no puede ser accesado -> "+
+                ctx.getText());
+                result = new CommonToken(0, "Null");
+
+            }
+        }
+
+        return result;
     }
 
 
@@ -680,11 +696,17 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
     @Override
     public Object visitElmntacess(MPGrammarParser.ElmntacessContext ctx){
 
+        boolean error = false;
+
         for (int i = 0; i < ctx.expression().size(); i++){
-            visit(ctx.expression(i));
+            if(visit(ctx.expression(i)) == null){
+                error = true;
+            }
         }
 
-        return null;
+        Token result = (error || ctx.expression().isEmpty())? null : new CommonToken((int)visit(ctx.expression(ctx.expression().size() - 1)), "x[0]");
+
+        return result;
     }
 
 

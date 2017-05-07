@@ -115,6 +115,10 @@ public class Scope {
             return lista;
         }
 
+        public Token getToken() {
+            return token;
+        }
+
         public void setLista(Object[] lista) {
             this.lista = lista;
         }
