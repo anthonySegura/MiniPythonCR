@@ -726,6 +726,7 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
 
         if(elmntacss != null){
             Scope.Identificador id = tablaSimbolos.buscar(((Token)prmt).getText());
+            System.out.println(id.isEsLista());
             if(id.isEsLista()){
                 int index = Integer.parseInt(((Token)elmntacss).getText());
                 int valor = id.getIndex(index);
@@ -991,7 +992,7 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
 
         if(lista != Table.LISTA && lista != MPGrammarParser.STRING){
             String tmp = JCEditor.consoleTextArea.getText() + "\n";
-            tmp += "Error len solo se puede aplicar a una lista " + ctx.getText();
+            tmp += "Error len solo se puede aplicar a una lista o string" + ctx.getText();
             JCEditor.showMessage(tmp);
 
         }

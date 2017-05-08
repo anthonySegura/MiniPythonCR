@@ -79,7 +79,7 @@ public class Scope {
             this.decl = context;
             this.esFuncion = false;
             this.tipoLista= tipoLista;
-            tipo = Table.LISTA;
+            this.tipo = Table.LISTA;
             this.token = token;
             this.esLista = true;
         }

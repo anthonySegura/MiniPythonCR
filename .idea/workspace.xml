@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef7a0d16-c1e0-4978-afaf-52ddf6e969bd" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/visitors/SemanticVisitor.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/visitors/SemanticVisitor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SymbolTable/Scope.java" afterPath="$PROJECT_DIR$/src/SymbolTable/Scope.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/visitors/SemanticVisitor.java" afterPath="$PROJECT_DIR$/src/visitors/SemanticVisitor.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -34,16 +33,18 @@
     <favorites_list name="MiniPython2" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.7534143">
+    <splitter split-orientation="horizontal" split-proportion="0.5781487">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="Scope.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/SymbolTable/Scope.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2108">
-                  <caret line="152" column="26" lean-forward="false" selection-start-line="152" selection-start-column="26" selection-end-line="152" selection-end-column="26" />
+                <state relative-caret-position="322">
+                  <caret line="108" column="9" lean-forward="true" selection-start-line="108" selection-start-column="9" selection-end-line="108" selection-end-column="9" />
                   <folding>
                     <element signature="imports" expanded="true" />
+                    <element signature="e#2954#2955#0" expanded="true" />
+                    <element signature="e#2992#2993#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -52,7 +53,7 @@
           <file leaf-file-name="Table.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/SymbolTable/Table.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="272">
+                <state relative-caret-position="-34">
                   <caret line="16" column="52" lean-forward="false" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
                   <folding />
                 </state>
@@ -82,8 +83,8 @@
           <file leaf-file-name="SemanticVisitor.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/visitors/SemanticVisitor.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="170">
-                  <caret line="683" column="75" lean-forward="false" selection-start-line="683" selection-start-column="75" selection-end-line="683" selection-end-column="75" />
+                <state relative-caret-position="122">
+                  <caret line="729" column="31" lean-forward="true" selection-start-line="729" selection-start-column="31" selection-end-line="729" selection-end-column="31" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -94,7 +95,7 @@
           <file leaf-file-name="TokenCR.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/SymbolTable/TokenCR.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="272">
+                <state relative-caret-position="255">
                   <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
@@ -130,10 +131,12 @@
           <file leaf-file-name="Scope.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/SymbolTable/Scope.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="68">
-                  <caret line="74" column="0" lean-forward="false" selection-start-line="73" selection-start-column="2" selection-end-line="74" selection-end-column="0" />
+                <state relative-caret-position="425">
+                  <caret line="83" column="24" lean-forward="false" selection-start-line="83" selection-start-column="17" selection-end-line="83" selection-end-column="24" />
                   <folding>
                     <element signature="imports" expanded="true" />
+                    <element signature="e#2711#2712#0" expanded="true" />
+                    <element signature="e#2746#2747#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -142,7 +145,7 @@
           <file leaf-file-name="MPGrammar.g4" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/MPGrammar.g4">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2703">
+                <state relative-caret-position="558">
                   <caret line="159" column="10" lean-forward="false" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="10" />
                   <folding>
                     <element signature="e#41#66#1" expanded="true" />
@@ -158,7 +161,13 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="10047">
                   <caret line="600" column="0" lean-forward="false" selection-start-line="600" selection-start-column="0" selection-end-line="600" selection-end-column="0" />
-                  <folding />
+                  <folding>
+                    <element signature="imports" expanded="false" />
+                    <element signature="e#585#586#0" expanded="false" />
+                    <element signature="e#619#620#0" expanded="false" />
+                    <element signature="e#30322#30323#0" expanded="false" />
+                    <element signature="e#30354#30355#0" expanded="false" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -188,8 +197,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Eps</find>
-      <find>eps</find>
       <find>Panel</find>
       <find>astP</find>
       <find>getSymbol</find>
@@ -210,7 +217,6 @@
       <find>notifyListeners</find>
       <find>runListener</find>
       <find>ERROR</find>
-      <find>buscar</find>
       <find>compilar</find>
       <find>LISTA</find>
       <find>el</find>
@@ -218,6 +224,9 @@
       <find>mulexp</find>
       <find>assign</find>
       <find>visit(ctx.expression</find>
+      <find>len solo</find>
+      <find>buscar</find>
+      <find>no p</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -235,10 +244,10 @@
     <setting file="file://$PROJECT_DIR$/src/visitors/SemanticVisitor.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/com/textEditor/JCEditor.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/visitors/ASTVisitor.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/SymbolTable/TokenCR.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/exceptions/TokensException.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/SymbolTable/Scope.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/com/textEditor/AreaDeTexto.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/SymbolTable/TokenCR.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/exceptions/DefaultError.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/exceptions/SyntaxException.java" root0="SKIP_INSPECTION" />
   </component>
@@ -789,11 +798,12 @@
       <workItem from="1494188134972" duration="3895000" />
       <workItem from="1494192270706" duration="730000" />
       <workItem from="1494193198254" duration="105000" />
+      <workItem from="1494199574069" duration="5853000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="214650000" />
+    <option name="totallyTimeSpent" value="220503000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -806,7 +816,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -827,9 +836,9 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25603864" sideWeight="0.4969651" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25603864" sideWeight="0.4969651" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33011273" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22382398" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1190,31 +1199,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MPGrammar.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2703">
-          <caret line="159" column="10" lean-forward="false" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="10" />
-          <folding>
-            <element signature="e#41#66#1" expanded="true" />
-            <element signature="e#68#132#1" expanded="true" />
-            <element signature="e#134#862#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/visitors/ASTVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10047">
           <caret line="600" column="0" lean-forward="false" selection-start-line="600" selection-start-column="0" selection-end-line="600" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SymbolTable/Table.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="52" lean-forward="false" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#585#586#0" expanded="false" />
+            <element signature="e#619#620#0" expanded="false" />
+            <element signature="e#30322#30323#0" expanded="false" />
+            <element signature="e#30354#30355#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1236,7 +1231,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SymbolTable/TokenCR.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
+        <state relative-caret-position="255">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1244,20 +1239,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/SymbolTable/Table.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="16" column="52" lean-forward="false" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MPGrammar.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="159" column="10" lean-forward="false" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="10" />
+          <folding>
+            <element signature="e#41#66#1" expanded="true" />
+            <element signature="e#68#132#1" expanded="true" />
+            <element signature="e#134#862#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/SymbolTable/Scope.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="74" column="0" lean-forward="false" selection-start-line="73" selection-start-column="2" selection-end-line="74" selection-end-column="0" />
+        <state relative-caret-position="322">
+          <caret line="108" column="9" lean-forward="true" selection-start-line="108" selection-start-column="9" selection-end-line="108" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2954#2955#0" expanded="true" />
+            <element signature="e#2992#2993#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/visitors/SemanticVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5899">
-          <caret line="347" column="13" lean-forward="false" selection-start-line="347" selection-start-column="13" selection-end-line="347" selection-end-column="13" />
+        <state relative-caret-position="122">
+          <caret line="729" column="31" lean-forward="true" selection-start-line="729" selection-start-column="31" selection-end-line="729" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
