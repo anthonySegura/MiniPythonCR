@@ -12,7 +12,7 @@ import java.util.Stack;
 /**
  * Created by anthony on 28/03/17.
  */
-public class ASTVisitor extends MPGrammarBaseVisitor{
+public class ASTVisitor extends BaseVisitorCR{
 
     private DefaultMutableTreeNode raiz;
     //Pila para controlar los niveles del arbol

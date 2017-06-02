@@ -1,23 +1,20 @@
 package visitors;
 
-import SymbolTable.Scope;
-import SymbolTable.Table;
-import SymbolTable.TokenCR;
+import symbolTable.Scope;
+import symbolTable.Table;
+import symbolTable.TokenCR;
 import com.textEditor.JCEditor;
-import grammar.MPGrammarBaseVisitor;
 import grammar.MPGrammarParser;
 import org.antlr.v4.runtime.CommonToken;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
-import static SymbolTable.Scope.*;
-
 /**
  * Created by anthony on 22/04/17.
  * Realiza el analisis semantico usando el patron de diseño Visitor
  */
-public class SemanticVisitor extends MPGrammarBaseVisitor {
+public class SemanticVisitor extends BaseVisitorCR {
 
     private Table tablaSimbolos = new Table();
     //Indica si el proceso de analisis semantico se realizo con exito o no
@@ -352,7 +349,7 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
 
         if (tipo != null) {
 
-            if (tipo.getClass().toString().equals("class SymbolTable.TokenCR")) {
+            if (tipo.getClass().toString().equals("class symbolTable.TokenCR")) {
                 //TODO comprobar si ya esta declarado
                 ((TokenCR) tipo).setNombre(ctx.IDENTIFIER().getText());
                 tablaSimbolos.scopeActual().insertarLista((TokenCR) tipo, ctx, ((TokenCR) tipo).getLista());
@@ -564,7 +561,7 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
         Object mulexp = visit(ctx.multiplicationExpression());
         Object addFact = visit(ctx.additionFactor());
 
-        if(mulexp.getClass().toString().equals("class SymbolTable.TokenCR")){
+        if(mulexp.getClass().toString().equals("class symbolTable.TokenCR")){
             return mulexp;
         }
 
@@ -644,7 +641,7 @@ public class SemanticVisitor extends MPGrammarBaseVisitor {
         Token elmnt1 = (Token) visit(ctx.elementExpression());
         Object elmnt2 = visit(ctx.multiplicationFactor());
 
-        if(elmnt1.getClass().toString().equals("class SymbolTable.TokenCR")){
+        if(elmnt1.getClass().toString().equals("class symbolTable.TokenCR")){
             return elmnt1;
         }
 

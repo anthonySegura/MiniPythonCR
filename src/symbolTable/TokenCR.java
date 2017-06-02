@@ -1,7 +1,6 @@
-package SymbolTable;
+package symbolTable;
 
 import org.antlr.v4.runtime.CommonToken;
-import org.antlr.v4.runtime.Token;
 
 /**
  * Created by anthony on 04/05/17.

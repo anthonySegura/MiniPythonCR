@@ -1,4 +1,4 @@
-package SymbolTable;
+package symbolTable;
 
 import java.util.Stack;
 
