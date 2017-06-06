@@ -6,6 +6,11 @@ grammar MPGrammar;
 
 tokens { INDENT, DEDENT }
 
+options
+{
+
+}
+
 @lexer::header {
   import com.yuvalshavit.antlr4.DenterHelper;
 }
@@ -72,7 +77,7 @@ LEN         :   'len';
 COMMENT     :  '#'.*?'\r'?'\n' -> skip ;
 MULTILINE_COMMENT : '“' (COMILLAS | . )*? '”' -> skip;
 
-WS          :  [ \t]+ -> skip;
+WS          :  [' '+\r\n\t] -> skip ;
 
 //Expresiones regulares
 IDENTIFIER  :   CharInicial CharContenido* ;
@@ -84,7 +89,8 @@ INTEGER
 
 STRING      :  '"' ('""'|~'"')* '"' ;
 CHAR        :  '\'' ('A'..'Z' | 'a'..'z' | '0'..'9'| '_' | SYMBOLS) '\'';
-NEWLINE     :  ('\r'? '\n' ' '*);
+NEWLINE     :  ('\r'? '\n' (' ' | '\t')* );
+
 
 
 fragment
