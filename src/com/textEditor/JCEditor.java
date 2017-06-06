@@ -1304,6 +1304,7 @@ public class JCEditor extends JFrame {
             gen.visit(tree);
 
             gen.imprimir();
+            gen.generarArchivo();
 
         }
         catch (Exception e){

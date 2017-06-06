@@ -2,83 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef7a0d16-c1e0-4978-afaf-52ddf6e969bd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/yuvalshavit/DenterHelper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/yuvalshavit/DenterOptions.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/antlr-denter-1.1.jar" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarLexer.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarLexer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$AddexpContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$AddexpContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$AddfactContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$AddfactContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$AdditionExpressionContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$AdditionExpressionContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$AdditionFactorContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$AdditionFactorContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$ArgListContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$ArgListContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$AssignStatementContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$AssignStatementContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$AssignstatContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$AssignstatContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$ChaexpContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$ChaexpContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$CmparisonContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$CmparisonContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$ComparisonContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$ComparisonContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$DefStatementContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$DefStatementContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$DefstatContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$DefstatContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$ElementAccessContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$ElementAccessContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$ElementExpressionContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$ElementExpressionContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$ElmntacessContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$ElmntacessContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$ElmntexpContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$ElmntexpContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$EpsarglistContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$EpsarglistContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$EpsexplistContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$EpsexplistContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$ExpressionContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$ExpressionContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$ExpressionListContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$ExpressionListContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$ExprsnContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$ExprsnContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$FncallexpContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$FncallexpContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$FncallstatContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$FncallstatContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$FunctionCallExpressionContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$FunctionCallExpressionContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$FunctionCallStatementContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$FunctionCallStatementContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$IdexpContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$IdexpContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$IfStatementContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$IfStatementContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$IfstatContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$IfstatContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$IntexpContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$IntexpContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$LenexpContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$LenexpContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$ListExpressionContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$ListExpressionContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$MoreArgsContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$MoreArgsContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$MoreExpressionsContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$MoreExpressionsContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$MoreStatementContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$MoreStatementContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$MorearglistContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$MorearglistContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$MoreargsNContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$MoreargsNContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$MoreexplistContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$MoreexplistContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$MoreexpsContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$MoreexpsContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$MorestatsContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$MorestatsContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$MulexpContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$MulexpContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$MulfactContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$MulfactContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$MultiplicationExpressionContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$MultiplicationExpressionContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$MultiplicationFactorContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$MultiplicationFactorContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$PizqexpContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$PizqexpContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$PrimfncallexpContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$PrimfncallexpContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$PrimitiveExpressionContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$PrimitiveExpressionContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$PrimlistexpContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$PrimlistexpContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$PrintStatementContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$PrintStatementContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$PrintstatContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$PrintstatContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$ProgramNContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$ProgramNContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$ReturnStatementContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$ReturnStatementContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$ReturnstatContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$ReturnstatContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$SeqContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$SeqContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$SequenceContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$SequenceContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$StatassignContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$StatassignContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$StatdefContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$StatdefContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$StatementContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$StatementContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$StatfncallContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$StatfncallContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$StatifContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$StatifContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$StatprintContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$StatprintContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$StatretContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$StatretContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$StatwhileContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$StatwhileContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$StrexpContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$StrexpContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$WhileStatementContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$WhileStatementContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$WhilestatContext.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser$WhilestatContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser.class" afterPath="$PROJECT_DIR$/out/production/MiniPython/grammar/MPGrammarParser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MPGrammar.g4" afterPath="$PROJECT_DIR$/MPGrammar.g4" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/byteCode/Instruction.java" afterPath="$PROJECT_DIR$/src/byteCode/Instruction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/byteCode/MPByteCode.java" afterPath="$PROJECT_DIR$/src/byteCode/MPByteCode.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/byteCode/ByteCodeWriter.java" afterPath="$PROJECT_DIR$/src/byteCode/ByteCodeWriter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/textEditor/JCEditor.java" afterPath="$PROJECT_DIR$/src/com/textEditor/JCEditor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/grammar/MPGrammarLexer.java" afterPath="$PROJECT_DIR$/src/grammar/MPGrammarLexer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/grammar/MPGrammarParser.java" afterPath="$PROJECT_DIR$/src/grammar/MPGrammarParser.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/visitors/ByteCodeGenerator.java" afterPath="$PROJECT_DIR$/src/visitors/ByteCodeGenerator.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -134,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JCEditor.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="JCEditor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/textEditor/JCEditor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="1311" column="34" lean-forward="false" selection-start-line="1311" selection-start-column="34" selection-end-line="1311" selection-end-column="34" />
+            <state relative-caret-position="2788">
+              <caret line="1306" column="33" lean-forward="false" selection-start-line="1306" selection-start-column="33" selection-end-line="1306" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -147,10 +72,12 @@
       <file leaf-file-name="ByteCodeGenerator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/visitors/ByteCodeGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="268" column="20" lean-forward="false" selection-start-line="268" selection-start-column="20" selection-end-line="268" selection-end-column="20" />
+            <state relative-caret-position="306">
+              <caret line="25" column="9" lean-forward="false" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#697#698#0" expanded="true" />
+                <element signature="e#747#748#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -169,8 +96,20 @@
       <file leaf-file-name="ByteCodeWriter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/byteCode/ByteCodeWriter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="311">
+              <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bytecode.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bytecode.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -201,7 +140,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
               <caret line="12" column="35" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="35" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -218,8 +159,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Panel</find>
-      <find>astP</find>
       <find>getSymbol</find>
       <find>Elm</find>
       <find>Addexp</find>
@@ -248,6 +187,8 @@
       <find>buscar</find>
       <find>no p</find>
       <find>compilar</find>
+      <find>while</find>
+      <find>if</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -259,6 +200,7 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/bytecode.txt" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/com/yuvalshavit/DenterOptions.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/com/yuvalshavit/DenterHelper.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/visitors/BaseVisitorCR.java" root0="SKIP_INSPECTION" />
@@ -305,14 +247,15 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/byteCode/Generator.java" />
         <option value="$PROJECT_DIR$/src/byteCode/ByteCodeGen.java" />
-        <option value="$PROJECT_DIR$/src/byteCode/ByteCodeWriter.java" />
         <option value="$PROJECT_DIR$/src/byteCode/Instruction.java" />
-        <option value="$PROJECT_DIR$/src/visitors/ByteCodeGenerator.java" />
         <option value="$PROJECT_DIR$/src/byteCode/MPByteCode.java" />
         <option value="$PROJECT_DIR$/src/antlr4/DenterOptions.java" />
         <option value="$PROJECT_DIR$/src/grammar/MPGrammarLexer.java" />
         <option value="$PROJECT_DIR$/MPGrammar.g4" />
+        <option value="$PROJECT_DIR$/src/visitors/ByteCodeGenerator.java" />
         <option value="$PROJECT_DIR$/src/com/textEditor/JCEditor.java" />
+        <option value="$PROJECT_DIR$/bytecode.txt" />
+        <option value="$PROJECT_DIR$/src/byteCode/ByteCodeWriter.java" />
       </list>
     </option>
   </component>
@@ -951,12 +894,12 @@
       <workItem from="1496372480243" duration="4123000" />
       <workItem from="1496607430276" duration="1156000" />
       <workItem from="1496710777502" duration="18117000" />
-      <workItem from="1496759653749" duration="3694000" />
+      <workItem from="1496759653749" duration="6394000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="255935000" />
+    <option name="totallyTimeSpent" value="258635000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -974,7 +917,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.256" sideWeight="0.5030349" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36070853" sideWeight="0.5060698" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32852808" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -990,10 +933,10 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.9291465" sideWeight="0.4969651" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36070853" sideWeight="0.4939302" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20409712" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20257966" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1074,13 +1017,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/grammar/MPGrammarLexer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="31" lean-forward="false" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/textEditor/AreaDeTexto.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -1329,7 +1265,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="12" column="35" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="35" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1361,14 +1299,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="430">
           <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/byteCode/ByteCodeWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1406,16 +1336,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/visitors/ByteCodeGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="268" column="20" lean-forward="false" selection-start-line="268" selection-start-column="20" selection-end-line="268" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MPGrammar.g4">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -1428,10 +1348,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/visitors/ByteCodeGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="25" column="9" lean-forward="false" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#697#698#0" expanded="true" />
+            <element signature="e#747#748#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/textEditor/JCEditor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="1311" column="34" lean-forward="false" selection-start-line="1311" selection-start-column="34" selection-end-line="1311" selection-end-column="34" />
+        <state relative-caret-position="2788">
+          <caret line="1306" column="33" lean-forward="false" selection-start-line="1306" selection-start-column="33" selection-end-line="1306" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/byteCode/ByteCodeWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bytecode.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
           <folding />
         </state>
       </provider>

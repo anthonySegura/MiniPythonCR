@@ -1,5 +1,6 @@
 package visitors;
 
+import byteCode.ByteCodeWriter;
 import byteCode.Instruction;
 import byteCode.MPByteCode;
 import grammar.MPGrammarBaseVisitor;
@@ -23,6 +24,10 @@ public class ByteCodeGenerator extends BaseVisitorCR {
         for(Instruction ins : instructions){
             System.out.println(ins.toString());
         }
+    }
+
+    public void generarArchivo(){
+        ByteCodeWriter.write(instructions);
     }
 
 
