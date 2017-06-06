@@ -12,7 +12,7 @@ public class Instruction {
 
     //Atributos para las funciones
     String [] args;
-    boolean isFunction = true;
+    boolean isFunction = false;
 
     public Instruction(String code, int line) {
         this.code = code;
@@ -51,7 +51,24 @@ public class Instruction {
         this.jmp = true;
     }
 
+    private String argsToString(){
+        String p = "";
+        if(args != null) {
+            for(int i = 0; i < args.length - 1; i++){
+                p += args[i] + ",";
+            }
+            p += args[args.length - 1];
+        }
+        return p;
+    }
+
+    private String functionToString(){
+        return this.code + "(" +  argsToString() + "):";
+    }
+
     public String toString(){
-        return this.getLine() + " " + this.getCode() + " " + ((jmp)? jmpLine : " ");
+
+        return (isFunction)? functionToString() :
+                this.getLine() + " " + this.getCode() + " " + ((jmp)? jmpLine : " ");
     }
 }

@@ -5,6 +5,7 @@ import byteCode.MPByteCode;
 import grammar.MPGrammarBaseVisitor;
 import grammar.MPGrammarParser;
 import jdk.nashorn.internal.objects.NativeUint8Array;
+import org.antlr.v4.runtime.tree.TerminalNode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +16,7 @@ import java.util.List;
 public class ByteCodeGenerator extends BaseVisitorCR {
 
     private List<Instruction> instructions = new ArrayList<>();
-    private int lineCount = 1;
+    private int lineCount = 0;
 
     public void imprimir(){
 
@@ -85,8 +86,10 @@ public class ByteCodeGenerator extends BaseVisitorCR {
     @Override
     public Object visitDefstat(MPGrammarParser.DefstatContext ctx) {
 
+        Object [] args = (Object[]) visit(ctx.argList());
+        String [] params = (String[]) args;
 
-        visit(ctx.argList());
+        instructions.add(new Instruction(ctx.IDENTIFIER().toString(), params));
 
         //Se escribe el codigo del cuerpo de la funcion
         visit(ctx.sequence());
@@ -97,20 +100,31 @@ public class ByteCodeGenerator extends BaseVisitorCR {
     @Override
     public Object visitMorearglist(MPGrammarParser.MorearglistContext ctx) {
 
-        visit(ctx.moreArgs());
-        return null;
+        String [] args = (String[]) visit(ctx.moreArgs());
+        args[0] = ctx.IDENTIFIER().getText();
+
+        return args;
     }
 
     @Override
     public Object visitEpsarglist(MPGrammarParser.EpsarglistContext ctx) {
+
+        String [] args = new String[0];
+
         return null;
     }
 
     @Override
     public Object visitMoreargsN(MPGrammarParser.MoreargsNContext ctx) {
 
+        String [] args = new String[ctx.IDENTIFIER().size() + 1];
+        int i = 1;
+        for(TerminalNode node : ctx.IDENTIFIER()){
+            args[i] = node.getText();
+            i++;
+        }
 
-        return null;
+        return args;
     }
 
     @Override
@@ -163,13 +177,19 @@ public class ByteCodeGenerator extends BaseVisitorCR {
     public Object visitReturnstat(MPGrammarParser.ReturnstatContext ctx) {
 
         visit(ctx.expression());
+        instructions.add(new Instruction(MPByteCode.RETURN, lineCount++));
         return null;
     }
 
     @Override
     public Object visitPrintstat(MPGrammarParser.PrintstatContext ctx) {
 
+        instructions.add(new Instruction(MPByteCode.CARGAR_GLOBAL + " print", lineCount++));
+
         visit(ctx.expression());
+
+        instructions.add(new Instruction(MPByteCode.LLAMAR_FUNCION + " 1", lineCount++));
+
         return null;
     }
 
@@ -190,7 +210,15 @@ public class ByteCodeGenerator extends BaseVisitorCR {
     @Override
     public Object visitFncallstat(MPGrammarParser.FncallstatContext ctx) {
 
-        visit(ctx.expressionList());
+        visit(ctx.primitiveExpression());
+
+
+        Object r = visit(ctx.expressionList());
+        if(r != null){
+            instructions.add(new Instruction(MPByteCode.LLAMAR_FUNCION + " " + (int)r, lineCount++));
+        }
+
+        instructions.add(new Instruction(MPByteCode.LLAMAR_FUNCION + " 0", lineCount++));
 
         return null;
     }
@@ -340,7 +368,16 @@ public class ByteCodeGenerator extends BaseVisitorCR {
     @Override
     public Object visitFncallexp(MPGrammarParser.FncallexpContext ctx) {
 
-        visit(ctx.expressionList());
+        instructions.add(new Instruction(MPByteCode.CARGAR_GLOBAL + " " + ctx.IDENTIFIER(), lineCount++));
+        Object r = visit(ctx.expressionList());
+        if(r != null){
+            instructions.add(new Instruction(MPByteCode.LLAMAR_FUNCION + " " + (int)r, lineCount++));
+        }
+        else{
+            instructions.add(new Instruction(MPByteCode.LLAMAR_FUNCION + " 0", lineCount++));
+
+        }
+
         return null;
     }
 
@@ -384,10 +421,19 @@ public class ByteCodeGenerator extends BaseVisitorCR {
         return null;
     }
 
+
     @Override
     public Object visitIdexp(MPGrammarParser.IdexpContext ctx) {
 
-        instructions.add(new Instruction(MPByteCode.CARGAR_VARIABLE +  " " + ctx.IDENTIFIER(), lineCount++));
+        String parent = ctx.getParent().getClass().toString();
+
+        if(parent.equals("class grammar.MPGrammarParser$FncallstatContext")) {
+            instructions.add(new Instruction(MPByteCode.CARGAR_GLOBAL +  " " + ctx.IDENTIFIER(), lineCount++));
+        }
+        else {
+            instructions.add(new Instruction(MPByteCode.CARGAR_VARIABLE + " " + ctx.IDENTIFIER(), lineCount++));
+        }
+
         return null;
     }
 
@@ -412,11 +458,19 @@ public class ByteCodeGenerator extends BaseVisitorCR {
 
     @Override
     public Object visitLenexp(MPGrammarParser.LenexpContext ctx) {
+        instructions.add(new Instruction(MPByteCode.CARGAR_GLOBAL + " len", lineCount++));
+
+        visit(ctx.expression());
+
+        instructions.add(new Instruction(MPByteCode.LLAMAR_FUNCION + " 1", lineCount++));
+
         return null;
     }
 
     @Override
     public Object visitPrimfncallexp(MPGrammarParser.PrimfncallexpContext ctx) {
+
+        visit(ctx.functionCallExpression());
         return null;
     }
 
