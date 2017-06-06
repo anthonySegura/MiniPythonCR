@@ -1309,6 +1309,7 @@ public class JCEditor extends JFrame {
         catch (Exception e){
             //showMessage("Error ");
             //e.printStackTrace();
+			//TODO QUITAR AL FINAL
 			e.printStackTrace();
         }
     }

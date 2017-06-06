@@ -12,7 +12,7 @@ options
 }
 
 @lexer::header {
-  import com.yuvalshavit.antlr4.DenterHelper;
+  import com.yuvalshavit.DenterHelper;
 }
 
 @lexer::members {
@@ -20,7 +20,7 @@ options
     .nl(NEWLINE)
     .indent(MPGrammarParser.INDENT)
     .dedent(MPGrammarParser.DEDENT)
-    .pullToken(super::nextToken);
+    .pullToken(MPGrammarLexer.super::nextToken);
 
   @Override
   public Token nextToken() {
@@ -77,7 +77,7 @@ LEN         :   'len';
 COMMENT     :  '#'.*?'\r'?'\n' -> skip ;
 MULTILINE_COMMENT : '“' (COMILLAS | . )*? '”' -> skip;
 
-WS          :  [' '+\r\n\t] -> skip ;
+WS          :  [' '+\r] -> skip ;
 
 //Expresiones regulares
 IDENTIFIER  :   CharInicial CharContenido* ;
@@ -133,7 +133,7 @@ fragment
 
 //Reglas gramaticales
 
-program         :   statement (statement)* EOF                                      #programN ;
+program         :   statement (statement)*                                          #programN ;
 
 statement       :   defStatement                                                    #statdef
                 | ifStatement                                                       #statif

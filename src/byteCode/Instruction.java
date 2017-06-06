@@ -5,21 +5,24 @@ package byteCode;
  */
 public class Instruction {
 
-    String code;
-    int line;
-    boolean jmp;
-    int jmpLine;
+    private String code;
+    private int line;
+    private boolean jmp;
+    private int jmpLine;
 
     //Atributos para las funciones
-    String [] args;
-    boolean isFunction = false;
+    private String [] args;
+    private boolean isFunction = false;
 
+
+    //Constructor para las instrucciones normales
     public Instruction(String code, int line) {
         this.code = code;
         this.line = line;
         jmp = false;
     }
 
+    //Constructor para la etiqueta de las funciones
     public Instruction(String code, String [] args){
         isFunction = true;
         this.code = code;
@@ -66,6 +69,7 @@ public class Instruction {
         return this.code + "(" +  argsToString() + "):";
     }
 
+    @Override
     public String toString(){
 
         return (isFunction)? functionToString() :

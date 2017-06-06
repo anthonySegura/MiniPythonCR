@@ -89,6 +89,8 @@ public class ByteCodeGenerator extends BaseVisitorCR {
         Object [] args = (Object[]) visit(ctx.argList());
         String [] params = (String[]) args;
 
+        //Se escribe la etiqueta de la funcion
+
         instructions.add(new Instruction(ctx.IDENTIFIER().toString(), params));
 
         //Se escribe el codigo del cuerpo de la funcion
@@ -184,11 +186,11 @@ public class ByteCodeGenerator extends BaseVisitorCR {
     @Override
     public Object visitPrintstat(MPGrammarParser.PrintstatContext ctx) {
 
-        instructions.add(new Instruction(MPByteCode.CARGAR_GLOBAL + " print", lineCount++));
+        instructions.add(new Instruction(MPByteCode.CARGAR_GLOBAL + "print", lineCount++));
 
         visit(ctx.expression());
 
-        instructions.add(new Instruction(MPByteCode.LLAMAR_FUNCION + " 1", lineCount++));
+        instructions.add(new Instruction(MPByteCode.LLAMAR_FUNCION + "1", lineCount++));
 
         return null;
     }
@@ -199,11 +201,11 @@ public class ByteCodeGenerator extends BaseVisitorCR {
 
         Object r = visit(ctx.expression());
         if(r != null){
-            instructions.add(new Instruction(MPByteCode.CONSTRUIR_LISTA + " " + (int)r, lineCount++));
+            instructions.add(new Instruction(MPByteCode.CONSTRUIR_LISTA + (int)r, lineCount++));
         }
 
 
-        instructions.add(new Instruction(MPByteCode.GUARDAR_VARIABLE + " " + ctx.IDENTIFIER() , lineCount++));
+        instructions.add(new Instruction(MPByteCode.GUARDAR_VARIABLE + ctx.IDENTIFIER() , lineCount++));
         return null;
     }
 
@@ -215,10 +217,10 @@ public class ByteCodeGenerator extends BaseVisitorCR {
 
         Object r = visit(ctx.expressionList());
         if(r != null){
-            instructions.add(new Instruction(MPByteCode.LLAMAR_FUNCION + " " + (int)r, lineCount++));
+            instructions.add(new Instruction(MPByteCode.LLAMAR_FUNCION + (int)r, lineCount++));
         }
 
-        instructions.add(new Instruction(MPByteCode.LLAMAR_FUNCION + " 0", lineCount++));
+        instructions.add(new Instruction(MPByteCode.LLAMAR_FUNCION + "0", lineCount++));
 
         return null;
     }
@@ -283,7 +285,7 @@ public class ByteCodeGenerator extends BaseVisitorCR {
         for(int i = 0; i < ctx.additionExpression().size(); i++){
             visit(ctx.additionExpression(i));
             String op = getOp(ctx);
-            instructions.add(new Instruction(MPByteCode.COMPARAR + " " + op, lineCount++));
+            instructions.add(new Instruction(MPByteCode.COMPARAR + op, lineCount++));
         }
 
         return null;
@@ -368,13 +370,13 @@ public class ByteCodeGenerator extends BaseVisitorCR {
     @Override
     public Object visitFncallexp(MPGrammarParser.FncallexpContext ctx) {
 
-        instructions.add(new Instruction(MPByteCode.CARGAR_GLOBAL + " " + ctx.IDENTIFIER(), lineCount++));
+        instructions.add(new Instruction(MPByteCode.CARGAR_GLOBAL + ctx.IDENTIFIER(), lineCount++));
         Object r = visit(ctx.expressionList());
         if(r != null){
-            instructions.add(new Instruction(MPByteCode.LLAMAR_FUNCION + " " + (int)r, lineCount++));
+            instructions.add(new Instruction(MPByteCode.LLAMAR_FUNCION + (int)r, lineCount++));
         }
         else{
-            instructions.add(new Instruction(MPByteCode.LLAMAR_FUNCION + " 0", lineCount++));
+            instructions.add(new Instruction(MPByteCode.LLAMAR_FUNCION + "0", lineCount++));
 
         }
 
@@ -408,7 +410,7 @@ public class ByteCodeGenerator extends BaseVisitorCR {
     @Override
     public Object visitIntexp(MPGrammarParser.IntexpContext ctx) {
 
-        instructions.add(new Instruction(MPByteCode.CARGAR_CONST + " " + ctx.INTEGER(), lineCount++));
+        instructions.add(new Instruction(MPByteCode.CARGAR_CONST + ctx.INTEGER(), lineCount++));
         return null;
 
 
@@ -417,7 +419,7 @@ public class ByteCodeGenerator extends BaseVisitorCR {
     @Override
     public Object visitStrexp(MPGrammarParser.StrexpContext ctx) {
 
-        instructions.add(new Instruction(MPByteCode.CARGAR_CONST + " " + ctx.STRING(), lineCount++));
+        instructions.add(new Instruction(MPByteCode.CARGAR_CONST + ctx.STRING(), lineCount++));
         return null;
     }
 
@@ -428,10 +430,10 @@ public class ByteCodeGenerator extends BaseVisitorCR {
         String parent = ctx.getParent().getClass().toString();
 
         if(parent.equals("class grammar.MPGrammarParser$FncallstatContext")) {
-            instructions.add(new Instruction(MPByteCode.CARGAR_GLOBAL +  " " + ctx.IDENTIFIER(), lineCount++));
+            instructions.add(new Instruction(MPByteCode.CARGAR_GLOBAL + ctx.IDENTIFIER(), lineCount++));
         }
         else {
-            instructions.add(new Instruction(MPByteCode.CARGAR_VARIABLE + " " + ctx.IDENTIFIER(), lineCount++));
+            instructions.add(new Instruction(MPByteCode.CARGAR_VARIABLE + ctx.IDENTIFIER(), lineCount++));
         }
 
         return null;
@@ -439,7 +441,7 @@ public class ByteCodeGenerator extends BaseVisitorCR {
 
     @Override
     public Object visitChaexp(MPGrammarParser.ChaexpContext ctx) {
-        instructions.add(new Instruction(MPByteCode.CARGAR_CONST + " " + ctx.CHAR(), lineCount++));
+        instructions.add(new Instruction(MPByteCode.CARGAR_CONST + ctx.CHAR(), lineCount++));
         return null;
     }
 
@@ -458,11 +460,11 @@ public class ByteCodeGenerator extends BaseVisitorCR {
 
     @Override
     public Object visitLenexp(MPGrammarParser.LenexpContext ctx) {
-        instructions.add(new Instruction(MPByteCode.CARGAR_GLOBAL + " len", lineCount++));
+        instructions.add(new Instruction(MPByteCode.CARGAR_GLOBAL + "len", lineCount++));
 
         visit(ctx.expression());
 
-        instructions.add(new Instruction(MPByteCode.LLAMAR_FUNCION + " 1", lineCount++));
+        instructions.add(new Instruction(MPByteCode.LLAMAR_FUNCION + "1", lineCount++));
 
         return null;
     }
