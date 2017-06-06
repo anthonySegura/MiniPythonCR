@@ -45,6 +45,7 @@ import org.fife.ui.rsyntaxtextarea.TokenMakerFactory;
 import grammar.MPGrammarLexer;
 import grammar.MPGrammarParser;
 import visitors.ASTVisitor;
+import visitors.ByteCodeGenerator;
 import visitors.SemanticVisitor;
 
 /**
@@ -1295,14 +1296,20 @@ public class JCEditor extends JFrame {
 
             ParseTree tree = parser.program();
 
-            SemanticVisitor checker = new SemanticVisitor();
+            //SemanticVisitor checker = new SemanticVisitor();
 
-			checker.visit(tree);
+			//checker.visit(tree);
+
+            ByteCodeGenerator gen = new ByteCodeGenerator();
+            gen.visit(tree);
+
+            gen.imprimir();
 
         }
         catch (Exception e){
             //showMessage("Error ");
             //e.printStackTrace();
+			e.printStackTrace();
         }
     }
 	

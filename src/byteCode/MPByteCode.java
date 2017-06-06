@@ -7,7 +7,7 @@ package byteCode;
 public abstract class MPByteCode {
 
     //Nombres mas faciles de recordar para las instrucciones ByteCode de Python
-    static String
+    public static String
             CARGAR_CONST = "LOAD_CONST",
             CARGAR_VARIABLE = "LOAD_FAST",
             GUARDAR_VARIABLE = "STORE_FAST",
