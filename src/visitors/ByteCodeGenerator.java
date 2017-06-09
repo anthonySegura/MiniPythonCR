@@ -224,8 +224,9 @@ public class ByteCodeGenerator extends BaseVisitorCR {
         if(r != null){
             instructions.add(new Instruction(MPByteCode.LLAMAR_FUNCION + (int)r, lineCount++));
         }
-
-        instructions.add(new Instruction(MPByteCode.LLAMAR_FUNCION + "0", lineCount++));
+        else {
+            instructions.add(new Instruction(MPByteCode.LLAMAR_FUNCION + "0", lineCount++));
+        }
 
         return null;
     }

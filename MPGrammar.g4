@@ -21,7 +21,6 @@ options
     .indent(MPGrammarParser.INDENT)
     .dedent(MPGrammarParser.DEDENT)
     .pullToken(MPGrammarLexer.super::nextToken);
-
   @Override
   public Token nextToken() {
     return denter.nextToken();
@@ -126,9 +125,7 @@ fragment
  SYMBOLS   : '+' | '-' | '*' | '/' | '@' | '{' | '[' | ']';
 
 /**
-
     Parser
-
 **/
 
 //Reglas gramaticales

@@ -93,7 +93,6 @@ public class MPGrammarLexer extends Lexer {
 	    .indent(MPGrammarParser.INDENT)
 	    .dedent(MPGrammarParser.DEDENT)
 	    .pullToken(MPGrammarLexer.super::nextToken);
-
 	  @Override
 	  public Token nextToken() {
 	    return denter.nextToken();
