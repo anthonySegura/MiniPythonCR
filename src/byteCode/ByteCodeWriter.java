@@ -13,7 +13,7 @@ import com.textEditor.JCEditor;
  */
 public class ByteCodeWriter {
 
-    private static String path = "./bytecode.txt";
+    private static final String path = "./bytecode.txt";
 
     public static void write(List<Instruction> instructions){
         try {

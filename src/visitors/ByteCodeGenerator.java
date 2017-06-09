@@ -139,12 +139,12 @@ public class ByteCodeGenerator extends BaseVisitorCR {
     {
 
         visit(ctx.expression());
-        //System.out.println("JUMP_IF_TRUE " + "xx");
+
         Instruction temp = new Instruction(MPByteCode.JMP_IF_TRUE, lineCount++);
         instructions.add(temp);
         visit(ctx.sequence(1));
         temp.setJmpLine(lineCount + 1);
-        //System.out.println("JUMP_ABSOLUTE " + "yy");
+
         Instruction temp2 = new Instruction(MPByteCode.JMP_ABS, lineCount++);
         instructions.add(temp2);
         visit(ctx.sequence(0));

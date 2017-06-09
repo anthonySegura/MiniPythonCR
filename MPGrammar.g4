@@ -77,7 +77,7 @@ LEN         :   'len';
 COMMENT     :  '#'.*?'\r'?'\n' -> skip ;
 MULTILINE_COMMENT : '“' (COMILLAS | . )*? '”' -> skip;
 
-WS          :  [' '+\r] -> skip ;
+WS : [' '+\r\t] -> skip ;
 
 //Expresiones regulares
 IDENTIFIER  :   CharInicial CharContenido* ;
@@ -89,7 +89,7 @@ INTEGER
 
 STRING      :  '"' ('""'|~'"')* '"' ;
 CHAR        :  '\'' ('A'..'Z' | 'a'..'z' | '0'..'9'| '_' | SYMBOLS) '\'';
-NEWLINE     :  ('\r'? '\n' (' ' | '\t')* );
+NEWLINE : ('\r'? '\n' (' ' | '\t')* );
 
 
 
